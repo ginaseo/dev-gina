@@ -99,6 +99,10 @@ input {
 }
 
 @media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
   #progress-track,
   #top-controls,
   #nav-rail,
