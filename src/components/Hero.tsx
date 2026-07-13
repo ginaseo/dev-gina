@@ -17,7 +17,7 @@ export default function Hero({ language, isMobile }: Props) {
         border: '1px solid var(--line)', background: `linear-gradient(135deg, ${BLUE}, ${PURPLE})`,
         display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 800, fontSize: photoSize * 0.4,
       }}>
-        {isEn ? 'J' : '서'}
+        {isEn ? 'G' : '서'}
       </div>
       <div>
         <div style={{ fontSize: isMobile ? 26 : 32, fontWeight: 800, color: 'var(--ink)', letterSpacing: '-0.02em', lineHeight: 1.05 }}>
