@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+:root {
+  --bg: oklch(98% 0.005 80);
+  --card-bg: #fff;
+  --ink: oklch(20% 0.01 80);
+  --sub: oklch(45% 0.01 80);
+  --line: oklch(90% 0.005 80);
+  --chip-track-bg: oklch(94% 0.005 80);
+  --tag-bg: oklch(96% 0.01 80);
+  --progress-track-bg: oklch(92% 0.005 80);
+  --sticky-bg: oklch(98% 0.005 80 / 0.94);
+  --filled-line: oklch(30% 0.02 80);
+  --unfilled-line: oklch(88% 0.005 80);
+  --card-w: 235px;
+  --card-maxw: 235px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: oklch(18% 0.01 80);
+    --card-bg: oklch(24% 0.01 80);
+    --ink: oklch(95% 0.005 80);
+    --sub: oklch(70% 0.01 80);
+    --line: oklch(32% 0.01 80);
+    --chip-track-bg: oklch(26% 0.01 80);
+    --tag-bg: oklch(30% 0.01 80);
+    --progress-track-bg: oklch(28% 0.01 80);
+    --sticky-bg: oklch(18% 0.01 80 / 0.9);
+    --filled-line: oklch(85% 0.01 80);
+    --unfilled-line: oklch(35% 0.01 80);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: oklch(18% 0.01 80);
+  --card-bg: oklch(24% 0.01 80);
+  --ink: oklch(95% 0.005 80);
+  --sub: oklch(70% 0.01 80);
+  --line: oklch(32% 0.01 80);
+  --chip-track-bg: oklch(26% 0.01 80);
+  --tag-bg: oklch(30% 0.01 80);
+  --progress-track-bg: oklch(28% 0.01 80);
+  --sticky-bg: oklch(18% 0.01 80 / 0.9);
+  --filled-line: oklch(85% 0.01 80);
+  --unfilled-line: oklch(35% 0.01 80);
+}
+
+:root[data-theme="light"] {
+  --bg: oklch(98% 0.005 80);
+  --card-bg: #fff;
+  --ink: oklch(20% 0.01 80);
+  --sub: oklch(45% 0.01 80);
+  --line: oklch(90% 0.005 80);
+  --chip-track-bg: oklch(94% 0.005 80);
+  --tag-bg: oklch(96% 0.01 80);
+  --progress-track-bg: oklch(92% 0.005 80);
+  --sticky-bg: oklch(98% 0.005 80 / 0.94);
+  --filled-line: oklch(30% 0.02 80);
+  --unfilled-line: oklch(88% 0.005 80);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+a {
+  color: oklch(50% 0.14 275);
+}
+a:hover {
+  color: oklch(42% 0.14 275);
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+.card {
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .09);
+  transform: scale(1.02);
+}
+
+#chip-row {
+  scrollbar-width: none;
+}
+#chip-row::-webkit-scrollbar {
+  display: none;
+}
+
+@media print {
+  #progress-track,
+  #top-controls,
+  #nav-rail,
+  #search-wrap,
+  #chip-row,
+  #mode-toggles {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+    color: #000;
+  }
+  .card {
+    break-inside: avoid;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+}
