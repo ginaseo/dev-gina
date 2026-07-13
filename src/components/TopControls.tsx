@@ -39,7 +39,7 @@ export default function TopControls({ language, onSetLanguage, isDark, onToggleD
       </div>
       <div style={pillStyle}>
         <button type="button" style={langBtnStyle(!isEn)} aria-pressed={!isEn} onClick={() => onSetLanguage('ko')}>한국어</button>
-        <button type="button" style={langBtnStyle(isEn)} aria-pressed={isEn} onClick={() => onSetLanguage('en')}>EN</button>
+        <button type="button" style={langBtnStyle(isEn)} aria-pressed={isEn} onClick={() => onSetLanguage('en')}>English</button>
       </div>
     </div>
   )

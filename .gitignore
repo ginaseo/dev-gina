@@ -3,3 +3,5 @@
 node_modules/
 dist/
 *.tsbuildinfo
+# personal source docs (resume drafts, portfolio PDFs) - never commit
+\#*
