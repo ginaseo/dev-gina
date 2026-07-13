@@ -68,7 +68,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 a {
@@ -103,6 +103,19 @@ input {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
+  :root {
+    --bg: oklch(98% 0.005 80) !important;
+    --card-bg: #fff !important;
+    --ink: oklch(20% 0.01 80) !important;
+    --sub: oklch(45% 0.01 80) !important;
+    --line: oklch(90% 0.005 80) !important;
+    --chip-track-bg: oklch(94% 0.005 80) !important;
+    --tag-bg: oklch(96% 0.01 80) !important;
+    --progress-track-bg: oklch(92% 0.005 80) !important;
+    --sticky-bg: oklch(98% 0.005 80 / 0.94) !important;
+    --filled-line: oklch(30% 0.02 80) !important;
+    --unfilled-line: oklch(88% 0.005 80) !important;
+  }
   #progress-track,
   #top-controls,
   #nav-rail,
@@ -114,6 +127,13 @@ input {
   body {
     background: #fff;
     color: #000;
+  }
+  /* scroll-reveal animations leave off-screen cards at opacity:0; force them
+     visible so pages beyond the first aren't blank when printing. */
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
   .card {
     break-inside: avoid;
