@@ -86,6 +86,11 @@
   }
   .pillgroup button[aria-pressed="true"] { background: var(--bg); color: var(--ink); }
   .pillgroup button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .pillgroup a {
+    padding: 6px 10px; border-radius: 7px; font-size: 12px; font-weight: 700; color: var(--sub);
+    text-decoration: none; display: inline-block; line-height: 1;
+  }
+  .pillgroup a::after { content: none; }
 
   #side-nav {
     position: fixed; top: 50%; right: 20px; transform: translateY(-50%); z-index: 55;
@@ -124,6 +129,9 @@
 <div style="position: relative; background: var(--bg); min-height: 100vh;">
 
   <div id="top-controls">
+    <div class="pillgroup">
+      <a href="/dev-gina/timeline/" data-i18n="nav.timeline"></a>
+    </div>
     <div class="pillgroup">
       <button type="button" id="theme-toggle" aria-label="다크모드 전환" title="다크모드 전환">🌙</button>
       <button type="button" id="print-btn" aria-label="인쇄" title="인쇄">🖨️</button>
@@ -247,6 +255,7 @@
     ko: {
       'header.tagline': 'AI와 함께 성장하는 백엔드 개발자',
       'header.pitch': '실무 운영 경험을 바탕으로, AI를 레버리지 삼아 <strong>추측이 아닌 측정과 검증</strong>으로 시스템을 개선하는 백엔드 엔지니어입니다.',
+      'nav.timeline': '타임라인',
       'side.about': '소개',
       'side.skills': '핵심역량',
       'side.stack': '기술스택',
@@ -302,6 +311,7 @@
     en: {
       'header.tagline': 'Backend Developer Growing with AI',
       'header.pitch': 'A backend engineer who improves systems through <strong>measurement and verification, not guesswork</strong> — leveraging AI on a foundation of hands-on operational experience.',
+      'nav.timeline': 'Timeline',
       'side.about': 'About',
       'side.skills': 'Highlights',
       'side.stack': 'Tech Stack',

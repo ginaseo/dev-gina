@@ -25,10 +25,18 @@ function langBtnStyle(active: boolean): CSSProperties {
   }
 }
 
+const linkBtnStyle: CSSProperties = {
+  padding: '5px 10px', borderRadius: 7, fontSize: 11, fontWeight: 700, color: 'var(--sub)',
+  textDecoration: 'none', display: 'inline-block', lineHeight: 1.4,
+}
+
 export default function TopControls({ language, onSetLanguage, isDark, onToggleDark }: Props) {
   const isEn = language === 'en'
   return (
     <div id="top-controls" style={{ position: 'fixed', top: 12, right: 16, zIndex: 60, display: 'flex', gap: 8, alignItems: 'center' }}>
+      <div style={pillStyle}>
+        <a href="/dev-gina/" style={linkBtnStyle}>{isEn ? 'Resume' : '이력서'}</a>
+      </div>
       <div style={pillStyle}>
         <button type="button" style={iconBtnStyle} onClick={onToggleDark} aria-label="다크모드 전환" title="다크모드 전환">
           {isDark ? '☀️' : '🌙'}
