@@ -32,7 +32,7 @@ export default function NavRail({ chapters, activeIdx, show, language, onSelect 
               color: active ? '#fff' : 'var(--ink)', fontSize: 10.5, fontWeight: 700, whiteSpace: 'nowrap', transition: 'all .2s ease',
             }}
           >
-            <span style={{ opacity: 0.7 }}>{c.num}</span>
+            <span style={{ opacity: 0.7 }}>{Number(c.num)}</span>
             <span>{short}</span>
           </button>
         )
