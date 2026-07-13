@@ -103,7 +103,7 @@ export default function App() {
           )}
         </div>
 
-        <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 24px', minHeight: '52vh' }} />
+        <div id="bottom-spacer" style={{ maxWidth: 900, margin: '0 auto', padding: '0 24px', minHeight: '52vh' }} />
       </div>
     </>
   )

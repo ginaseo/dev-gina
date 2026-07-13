@@ -121,7 +121,8 @@ input {
   #nav-rail,
   #search-wrap,
   #chip-row,
-  #mode-toggles {
+  #mode-toggles,
+  #bottom-spacer {
     display: none !important;
   }
   body {
