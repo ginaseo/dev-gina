@@ -21,26 +21,39 @@
     --purple: oklch(55% 0.15 300);
     --gold: oklch(63% 0.15 80);
     --sky: oklch(68% 0.10 220);
+    --progress-track-bg: oklch(92% 0.005 80);
+    --filled-line: oklch(30% 0.02 80);
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: oklch(18% 0.01 80); --ink: oklch(95% 0.005 80); --sub: oklch(70% 0.01 80); --line: oklch(32% 0.01 80);
       --chip-track-bg: oklch(26% 0.01 80); --card-bg: oklch(24% 0.01 80);
+      --progress-track-bg: oklch(28% 0.01 80); --filled-line: oklch(85% 0.01 80);
     }
   }
   :root[data-theme="dark"] {
     --bg: oklch(18% 0.01 80); --ink: oklch(95% 0.005 80); --sub: oklch(70% 0.01 80); --line: oklch(32% 0.01 80);
     --chip-track-bg: oklch(26% 0.01 80); --card-bg: oklch(24% 0.01 80);
+    --progress-track-bg: oklch(28% 0.01 80); --filled-line: oklch(85% 0.01 80);
   }
   :root[data-theme="light"] {
     --bg: oklch(98% 0.005 80); --ink: oklch(20% 0.01 80); --sub: oklch(45% 0.01 80); --line: oklch(90% 0.005 80);
     --chip-track-bg: oklch(94% 0.005 80); --card-bg: #fff;
+    --progress-track-bg: oklch(92% 0.005 80); --filled-line: oklch(30% 0.02 80);
+  }
+
+  @font-face {
+    font-family: 'Pretendard Variable';
+    src: url('/dev-gina/PretendardVariable.woff2') format('woff2-variations'), url('/dev-gina/PretendardVariable.woff2') format('woff2');
+    font-weight: 45 920;
+    font-style: normal;
+    font-display: swap;
   }
 
   * { box-sizing: border-box; }
   body {
     margin: 0; background: var(--bg); color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', sans-serif;
+    font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', sans-serif;
   }
   .wrap { max-width: 640px; margin: 0 auto; padding: 0 28px 80px; }
   a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
@@ -112,7 +125,7 @@
   #side-nav button:hover:not(.active) { color: var(--accent); }
 
   @media print {
-    #top-controls, #side-nav, #bottom-spacer { display: none !important; }
+    #top-controls, #side-nav, #bottom-spacer, #progress-track { display: none !important; }
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
     :root { --bg: #fff !important; --ink: oklch(20% 0.01 80) !important; --sub: oklch(45% 0.01 80) !important; --line: oklch(90% 0.005 80) !important; }
     section { break-inside: avoid; }
@@ -125,6 +138,10 @@
 </style>
 </head>
 <body>
+
+<div id="progress-track" style="position: fixed; top: 0; left: 0; right: 0; height: 3px; background: var(--progress-track-bg); z-index: 60;">
+  <div id="progress-fill" style="height: 100%; background: var(--filled-line); width: 0%; transition: width .1s linear;"></div>
+</div>
 
 <div style="position: relative; background: var(--bg); min-height: 100vh;">
 
@@ -435,6 +452,8 @@
   var sections = NAV_ORDER.map(function (entry) { return document.getElementById(entry.id); });
   var navButtons = Array.prototype.slice.call(sideNav.querySelectorAll('button'));
 
+  var progressFill = document.getElementById('progress-fill');
+
   function updateActiveSection() {
     var idx = -1;
     sections.forEach(function (s, i) {
@@ -444,6 +463,9 @@
     var maxScroll = doc.scrollHeight - window.innerHeight;
     if (maxScroll > 0 && window.scrollY >= maxScroll - 4) idx = sections.length - 1;
     navButtons.forEach(function (b, i) { b.classList.toggle('active', i === idx); });
+
+    var pct = maxScroll > 0 ? Math.min(1, window.scrollY / maxScroll) : 1;
+    progressFill.style.width = Math.round(pct * 100) + '%';
   }
 
   var ticking = false;

@@ -28,7 +28,7 @@ jobs:
       - run: |
           mkdir -p pages/timeline
           cp -r dist/. pages/timeline/
-          cp site-root/index.html pages/index.html
+          cp -r site-root/. pages/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: pages
