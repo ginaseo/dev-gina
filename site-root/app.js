@@ -1,0 +1,120 @@
+(function () {
+  var NAV_ORDER = [
+    { id: 'about', color: 'var(--sky)' },
+    { id: 'skills', color: 'var(--blue)', num: 1 },
+    { id: 'stack', color: 'var(--green)', num: 2 },
+    { id: 'projects', color: 'var(--purple)', num: 3 },
+    { id: 'careers', color: 'var(--red)', num: 4 },
+    { id: 'education', color: 'var(--gold)', num: 5 },
+    { id: 'etc', color: 'var(--orange)', num: 6 },
+  ];
+  var sideNav = document.getElementById('side-nav');
+  NAV_ORDER.forEach(function (entry) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.dataset.target = entry.id;
+    btn.dataset.i18nNav = 'side.' + entry.id;
+    btn.style.setProperty('--dot-color', entry.color);
+    if (entry.num) {
+      var num = document.createElement('span');
+      num.className = 'nav-num';
+      num.textContent = entry.num;
+      btn.appendChild(num);
+    } else {
+      var dot = document.createElement('span');
+      dot.className = 'section-dot';
+      dot.style.background = entry.color;
+      btn.appendChild(dot);
+    }
+    var label = document.createElement('span');
+    label.className = 'nav-label';
+    btn.appendChild(label);
+    btn.addEventListener('click', function () {
+      document.getElementById(entry.id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    sideNav.appendChild(btn);
+  });
+
+  var currentLang = 'ko';
+  function applyLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      el.innerHTML = I18N[lang][key] || '';
+    });
+    sideNav.querySelectorAll('button').forEach(function (btn) {
+      var key = btn.getAttribute('data-i18n-nav');
+      btn.querySelector('.nav-label').textContent = I18N[lang][key] || '';
+    });
+    document.getElementById('lang-ko').setAttribute('aria-pressed', String(lang === 'ko'));
+    document.getElementById('lang-en').setAttribute('aria-pressed', String(lang === 'en'));
+    document.documentElement.lang = lang;
+  }
+  document.getElementById('lang-ko').addEventListener('click', function () { applyLang('ko'); });
+  document.getElementById('lang-en').addEventListener('click', function () { applyLang('en'); });
+  applyLang(localStorage.getItem('lang') === 'en' ? 'en' : 'ko');
+
+  var root = document.documentElement;
+  var themeToggle = document.getElementById('theme-toggle');
+  function systemDark() { return window.matchMedia('(prefers-color-scheme: dark)').matches; }
+  function syncThemeIcon() {
+    var current = root.getAttribute('data-theme');
+    var isDark = current ? current === 'dark' : systemDark();
+    themeToggle.textContent = isDark ? '☀️' : '🌙';
+  }
+  var storedTheme = localStorage.getItem('theme');
+  if (storedTheme === 'light' || storedTheme === 'dark') root.setAttribute('data-theme', storedTheme);
+  syncThemeIcon();
+  themeToggle.addEventListener('click', function () {
+    var current = root.getAttribute('data-theme');
+    var isDark = current ? current === 'dark' : systemDark();
+    var next = isDark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    syncThemeIcon();
+  });
+  document.getElementById('print-btn').addEventListener('click', function () {
+    window.print();
+  });
+
+  var sections = NAV_ORDER.map(function (entry) { return document.getElementById(entry.id); });
+  var navButtons = Array.prototype.slice.call(sideNav.querySelectorAll('button'));
+
+  var progressFill = document.getElementById('progress-fill');
+
+  var revealEls = Array.prototype.slice.call(
+    document.querySelectorAll('.section-body li, .section-body .proj-headline, .section-body p')
+  );
+  revealEls.forEach(function (el) { el.setAttribute('data-reveal', ''); });
+
+  function updateActiveSection() {
+    var idx = -1;
+    sections.forEach(function (s, i) {
+      if (s.getBoundingClientRect().top < 160) idx = i;
+    });
+    var doc = document.documentElement;
+    var maxScroll = doc.scrollHeight - window.innerHeight;
+    if (maxScroll > 0 && window.scrollY >= maxScroll - 4) idx = sections.length - 1;
+    navButtons.forEach(function (b, i) { b.classList.toggle('active', i === idx); });
+
+    var pct = maxScroll > 0 ? Math.min(1, window.scrollY / maxScroll) : 1;
+    progressFill.style.width = Math.round(pct * 100) + '%';
+
+    var revealThreshold = window.innerHeight * 0.95;
+    revealEls.forEach(function (el) {
+      if (!el.classList.contains('revealed') && el.getBoundingClientRect().top < revealThreshold) {
+        el.classList.add('revealed');
+      }
+    });
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { ticking = false; updateActiveSection(); });
+  }, { passive: true });
+  window.addEventListener('resize', updateActiveSection, { passive: true });
+  updateActiveSection();
+})();
