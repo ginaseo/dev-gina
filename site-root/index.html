@@ -60,9 +60,16 @@
   a::after { content: '↗'; display: inline-block; font-size: 0.75em; margin-left: 1px; text-decoration: none; transform: translateY(-1px); }
 
   header { padding-top: 60px; padding-bottom: 8px; scroll-margin-top: 90px; }
-  .name { font-size: 27px; font-weight: 800; letter-spacing: -0.01em; }
-  .role { font-size: 15.5px; font-weight: 600; color: var(--ink); margin-top: 8px; }
-  .contact { font-size: 12.5px; color: var(--sub); margin-top: 14px; line-height: 1.8; }
+  .hero-row { display: flex; align-items: center; gap: 22px; }
+  .avatar {
+    width: 68px; height: 68px; border-radius: 50%; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 800; font-size: 27.2px;
+  }
+  .name { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; color: var(--ink); }
+  .role { font-size: 15.5px; font-weight: 600; color: var(--sub); margin-top: 6px; }
+  .contact { font-size: 12.5px; color: var(--sub); margin-top: 8px; line-height: 1.6; font-variant-numeric: tabular-nums; }
   .contact a { color: var(--sub); }
   .pitch { font-size: 13.5px; line-height: 1.8; margin-top: 22px; max-width: 56ch; }
   .pitch strong { color: var(--accent); font-weight: 700; }
@@ -88,21 +95,21 @@
   p { font-size: 13px; line-height: 1.8; margin: 0; }
 
   #top-controls {
-    position: fixed; top: 16px; right: 20px; z-index: 60; display: flex; gap: 8px; align-items: center;
+    position: fixed; top: 12px; right: 16px; z-index: 60; display: flex; gap: 8px; align-items: center;
   }
   .pillgroup {
     display: flex; gap: 2px; background: var(--chip-track-bg); border-radius: 9px; padding: 2px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.06);
   }
-  .pillgroup button {
-    border: none; padding: 6px 10px; border-radius: 7px; font-size: 12px; cursor: pointer;
+  .pillgroup button, .pillgroup a {
+    border: none; border-radius: 7px; cursor: pointer;
     background: transparent; line-height: 1; font-family: inherit; color: var(--sub); font-weight: 700;
+    text-decoration: none; display: inline-block;
   }
+  .pillgroup .icon-btn { padding: 5px 9px; font-size: 13px; }
+  .pillgroup .text-btn { padding: 5px 10px; font-size: 11px; }
   .pillgroup button[aria-pressed="true"] { background: var(--bg); color: var(--ink); }
-  .pillgroup button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-  .pillgroup a {
-    padding: 6px 10px; border-radius: 7px; font-size: 12px; font-weight: 700; color: var(--sub);
-    text-decoration: none; display: inline-block; line-height: 1;
-  }
+  .pillgroup button:focus-visible, .pillgroup a:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
   .pillgroup a::after { content: none; }
 
   #side-nav {
@@ -147,15 +154,15 @@
 
   <div id="top-controls">
     <div class="pillgroup">
-      <a href="/dev-gina/timeline/" data-i18n="nav.timeline"></a>
+      <a class="text-btn" href="/dev-gina/timeline/" data-i18n="nav.timeline"></a>
     </div>
     <div class="pillgroup">
-      <button type="button" id="theme-toggle" aria-label="다크모드 전환" title="다크모드 전환">🌙</button>
-      <button type="button" id="print-btn" aria-label="인쇄" title="인쇄">🖨️</button>
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="다크모드 전환" title="다크모드 전환">🌙</button>
+      <button type="button" class="icon-btn" id="print-btn" aria-label="인쇄" title="인쇄">🖨️</button>
     </div>
     <div class="pillgroup">
-      <button type="button" id="lang-ko" aria-pressed="true">한국어</button>
-      <button type="button" id="lang-en" aria-pressed="false">English</button>
+      <button type="button" class="text-btn" id="lang-ko" aria-pressed="true">한국어</button>
+      <button type="button" class="text-btn" id="lang-en" aria-pressed="false">English</button>
     </div>
   </div>
 
@@ -163,11 +170,16 @@
 
   <div class="wrap">
     <header id="about">
-      <div class="name">서진하 <span style="font-weight: 400; color: var(--sub); font-size: 16px;">Jinha (Gina) Seo</span></div>
-      <div class="role" data-i18n="header.tagline"></div>
-      <div class="contact">
-        <a href="mailto:iamginaseo@gmail.com">iamginaseo@gmail.com</a> ·
-        <a href="https://github.com/ginaseo">github.com/ginaseo</a>
+      <div class="hero-row">
+        <div class="avatar" data-i18n="header.avatar"></div>
+        <div>
+          <div class="name" data-i18n="header.name"></div>
+          <div class="role" data-i18n="header.tagline"></div>
+          <div class="contact">
+            <a href="mailto:iamginaseo@gmail.com">iamginaseo@gmail.com</a> ·
+            <a href="https://github.com/ginaseo">github.com/ginaseo</a>
+          </div>
+        </div>
       </div>
       <p class="pitch" data-i18n="header.pitch"></p>
     </header>
@@ -270,6 +282,8 @@
 (function () {
   var I18N = {
     ko: {
+      'header.avatar': '서',
+      'header.name': '서진하',
       'header.tagline': 'AI와 함께 성장하는 백엔드 개발자',
       'header.pitch': '실무 운영 경험을 바탕으로, AI를 레버리지 삼아 <strong>추측이 아닌 측정과 검증</strong>으로 시스템을 개선하는 백엔드 엔지니어입니다.',
       'nav.timeline': '타임라인',
@@ -326,6 +340,8 @@
       'etc.li3': '해외 체류 경험 (캐나다 토론토 외, 2012.12 – 2014.08) — 언어·문화·라이프스타일 다양성 경험',
     },
     en: {
+      'header.avatar': 'G',
+      'header.name': 'Jinha (Gina) Seo',
       'header.tagline': 'Backend Developer Growing with AI',
       'header.pitch': 'A backend engineer who improves systems through <strong>measurement and verification, not guesswork</strong> — leveraging AI on a foundation of hands-on operational experience.',
       'nav.timeline': 'Timeline',
