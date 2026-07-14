@@ -68,7 +68,7 @@
     border: 1px solid var(--line);
     background: linear-gradient(135deg, var(--blue), var(--purple));
     display: flex; align-items: center; justify-content: center;
-    color: #fff; font-weight: 800; font-size: 27.2px;
+    color: #fff; font-weight: 800; font-size: 27.2px; line-height: 1;
   }
   .name { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; color: var(--ink); }
   .role { font-size: 15.5px; font-weight: 600; color: var(--sub); margin-top: 6px; line-height: 1.5; }
@@ -92,7 +92,7 @@
   .section-head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
   .section-num {
     width: 30px; height: 30px; border-radius: 9px; color: #fff; flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; line-height: 1;
   }
   .section-period { margin-left: auto; font-size: 12.5px; color: var(--sub); white-space: nowrap; }
   h2 {
@@ -109,6 +109,12 @@
   .tech { font-size: 11.5px; color: var(--sub); margin-top: 8px; }
   .tech b { color: var(--sub); font-weight: 700; }
   p { font-size: 13px; line-height: 1.8; margin: 0; }
+
+  [data-reveal] { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+  [data-reveal].revealed { opacity: 1; transform: translateY(0); }
+  @media print {
+    [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
 
   #top-controls {
     position: fixed; top: 12px; right: 16px; z-index: 60; display: flex; gap: 8px; align-items: center;
@@ -511,6 +517,11 @@
 
   var progressFill = document.getElementById('progress-fill');
 
+  var revealEls = Array.prototype.slice.call(
+    document.querySelectorAll('.section-body li, .section-body .proj-headline, .section-body p')
+  );
+  revealEls.forEach(function (el) { el.setAttribute('data-reveal', ''); });
+
   function updateActiveSection() {
     var idx = -1;
     sections.forEach(function (s, i) {
@@ -523,6 +534,13 @@
 
     var pct = maxScroll > 0 ? Math.min(1, window.scrollY / maxScroll) : 1;
     progressFill.style.width = Math.round(pct * 100) + '%';
+
+    var revealThreshold = window.innerHeight * 0.95;
+    revealEls.forEach(function (el) {
+      if (!el.classList.contains('revealed') && el.getBoundingClientRect().top < revealThreshold) {
+        el.classList.add('revealed');
+      }
+    });
   }
 
   var ticking = false;

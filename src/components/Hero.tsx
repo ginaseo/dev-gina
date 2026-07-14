@@ -16,7 +16,7 @@ export default function Hero({ language, isMobile }: Props) {
         <div style={{
           width: photoSize, height: photoSize, borderRadius: '50%', overflow: 'hidden', flexShrink: 0,
           border: '1px solid var(--line)', background: `linear-gradient(135deg, ${BLUE}, ${PURPLE})`,
-          display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 800, fontSize: photoSize * 0.4,
+          display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 800, fontSize: photoSize * 0.4, lineHeight: 1,
         }}>
           {isEn ? 'G' : '서'}
         </div>
