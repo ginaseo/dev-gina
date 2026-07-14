@@ -16,7 +16,7 @@ export default function NavRail({ chapters, activeIdx, show, language, onSelect 
   const visible = chapters.filter((c) => c.hasVisible)
 
   return (
-    <div id="nav-rail" style={{ position: 'fixed', top: '50%', right: 18, transform: 'translateY(-50%)', zIndex: 55, display: 'flex', flexDirection: 'column', gap: 11 }}>
+    <div id="nav-rail" style={{ position: 'fixed', top: '50%', right: 18, transform: 'translateY(-50%)', zIndex: 55, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 11 }}>
       {visible.map((c) => {
         const active = c.idx === activeIdx
         const short = isEn && TR_CHAPTERS[c.num] ? TR_CHAPTERS[c.num].short : RAW_CHAPTERS[c.idx].shortTitle
