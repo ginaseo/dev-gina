@@ -28,7 +28,7 @@ function langBtnStyle(active: boolean): CSSProperties {
 }
 
 const linkBtnStyle: CSSProperties = {
-  ...pillBtnBase, padding: '0 10px', fontSize: 11, fontWeight: 700, color: 'var(--sub)', textDecoration: 'none',
+  ...pillBtnBase, width: 66, fontSize: 11, fontWeight: 700, color: 'var(--sub)', textDecoration: 'none', textAlign: 'center',
 }
 
 export default function TopControls({ language, onSetLanguage, isDark, onToggleDark }: Props) {

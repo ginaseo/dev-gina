@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --bg: oklch(98% 0.005 80);
+  --bg: #fff;
   --card-bg: #fff;
   --ink: oklch(20% 0.01 80);
   --sub: oklch(45% 0.01 80);
@@ -9,7 +9,7 @@
   --chip-track-bg: oklch(94% 0.005 80);
   --tag-bg: oklch(96% 0.01 80);
   --progress-track-bg: oklch(92% 0.005 80);
-  --sticky-bg: oklch(98% 0.005 80 / 0.94);
+  --sticky-bg: oklch(100% 0 0 / 0.94);
   --filled-line: oklch(30% 0.02 80);
   --unfilled-line: oklch(88% 0.005 80);
   --card-w: 235px;
@@ -47,7 +47,7 @@
 }
 
 :root[data-theme="light"] {
-  --bg: oklch(98% 0.005 80);
+  --bg: #fff;
   --card-bg: #fff;
   --ink: oklch(20% 0.01 80);
   --sub: oklch(45% 0.01 80);
@@ -55,7 +55,7 @@
   --chip-track-bg: oklch(94% 0.005 80);
   --tag-bg: oklch(96% 0.01 80);
   --progress-track-bg: oklch(92% 0.005 80);
-  --sticky-bg: oklch(98% 0.005 80 / 0.94);
+  --sticky-bg: oklch(100% 0 0 / 0.94);
   --filled-line: oklch(30% 0.02 80);
   --unfilled-line: oklch(88% 0.005 80);
 }
@@ -104,7 +104,7 @@ input {
     print-color-adjust: exact !important;
   }
   :root {
-    --bg: oklch(98% 0.005 80) !important;
+    --bg: #fff !important;
     --card-bg: #fff !important;
     --ink: oklch(20% 0.01 80) !important;
     --sub: oklch(45% 0.01 80) !important;
