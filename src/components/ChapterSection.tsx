@@ -25,7 +25,7 @@ export default function ChapterSection({ chapter: c, layout }: Props) {
         <div style={{ width: 30, height: 30, borderRadius: 9, background: c.accent, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 800, flexShrink: 0 }}>
           {Number(c.num)}
         </div>
-        <div style={{ fontSize: chapterFontSize, fontWeight: 800, color: 'var(--ink)', letterSpacing: '-0.01em' }}>{c.title}</div>
+        <div style={{ fontSize: chapterFontSize, fontWeight: 800, color: 'var(--ink)', letterSpacing: '-0.01em', lineHeight: 1.2 }}>{c.title}</div>
         <div style={{ marginLeft: 'auto', fontSize: 12.5, color: 'var(--sub)' }}>{c.period}</div>
       </div>
       <div style={{ fontSize: 13, color: 'var(--sub)', fontStyle: 'italic', margin: '6px 0 6px 42px' }}>{c.theme}</div>
