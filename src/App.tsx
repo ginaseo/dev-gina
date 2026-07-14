@@ -20,7 +20,13 @@ export default function App() {
   const { isMobile, showRail } = useViewport()
   const { progress, activeIdx, revealed, recompute, setActiveIdx } = useScrollTracking()
 
-  const [language, setLanguage] = useState<Language>('ko')
+  const [language, setLanguageState] = useState<Language>(
+    () => (localStorage.getItem('lang') as Language) || 'ko',
+  )
+  const setLanguage = (lang: Language) => {
+    localStorage.setItem('lang', lang)
+    setLanguageState(lang)
+  }
   const [viewMode, setViewMode] = useState<ViewMode>('timeline')
   const [displayMode, setDisplayMode] = useState<DisplayMode>('detailed')
   const [activeCategory, setActiveCategory] = useState('전체')
