@@ -58,7 +58,7 @@ export default function SearchFilterBar({
           style={{ width: '100%', maxWidth: '100%', boxSizing: 'border-box', border: '1px solid var(--line)', borderRadius: 8, padding: '8px 12px', fontSize: 12.5, background: 'var(--card-bg)', color: 'var(--ink)' }}
         />
       </div>
-      <div id="chip-row" ref={chipRowRef} style={{ maxWidth: 900, margin: '0 auto', padding: `0 ${isMobile ? 20 : 24}px 8px`, display: 'flex', justifyContent: 'center', gap: 7, overflowX: 'auto' }}>
+      <div id="chip-row" ref={chipRowRef} style={{ maxWidth: 900, margin: '0 auto', padding: `0 ${isMobile ? 20 : 24}px 8px`, display: 'flex', justifyContent: isMobile ? 'flex-start' : 'center', gap: 7, overflowX: 'auto' }}>
         {CHIPS.map((cat) => {
           const active = activeCategory === cat.name
           return (
