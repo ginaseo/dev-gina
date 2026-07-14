@@ -27,7 +27,7 @@ export default function NavRail({ chapters, activeIdx, show, language, onSelect 
             onClick={() => onSelect(c.idx)}
             style={{
               textAlign: 'left', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 6,
-              padding: '4px 9px', borderRadius: 14, cursor: 'pointer', border: `1px solid ${active ? c.accent : 'var(--line)'}`,
+              height: 23, padding: '4px 9px', borderRadius: 14, cursor: 'pointer', border: `1px solid ${active ? c.accent : 'var(--line)'}`,
               boxShadow: '0 1px 4px rgba(0,0,0,.06)', background: active ? c.accent : 'var(--card-bg)',
               color: active ? '#fff' : 'var(--ink)', fontSize: 10.5, fontWeight: 700, whiteSpace: 'nowrap', transition: 'all .2s ease',
             }}

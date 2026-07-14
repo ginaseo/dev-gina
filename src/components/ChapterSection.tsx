@@ -21,7 +21,7 @@ export default function ChapterSection({ chapter: c, layout }: Props) {
 
   return (
     <div style={{ maxWidth: 900, margin: '0 auto', padding: `${chapterTopPad}px ${sidePad}px ${chapterTopPad}px` }}>
-      <div data-chapter-idx={c.idx} style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: 2 }}>
+      <div data-chapter-idx={c.idx} style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 2 }}>
         <div style={{ width: 30, height: 30, borderRadius: 9, background: c.accent, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 800, flexShrink: 0 }}>
           {Number(c.num)}
         </div>

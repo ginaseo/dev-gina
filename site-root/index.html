@@ -81,9 +81,9 @@
 
   section { margin-top: 88px; scroll-margin-top: 90px; }
   @media (min-width: 901px) {
-    #skills { margin-top: 145.4px; }
+    #skills { margin-top: 146.7px; }
   }
-  .section-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .section-head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
   .section-num {
     width: 30px; height: 30px; border-radius: 9px; color: #fff; flex-shrink: 0;
     display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;
@@ -124,15 +124,15 @@
   .pillgroup a::after { content: none; }
 
   #side-nav {
-    /* extra +8.75px offsets the 7th item ("소개") this list has that Timeline's nav-rail
-       doesn't, so both rails start at the same Y despite Resume's list being taller.
-       (measured under the real self-hosted font on the deployed site, not file:// fallback fonts) */
-    position: fixed; top: 50%; right: 18px; transform: translateY(calc(-50% + 8.75px)); z-index: 55;
+    /* extra +17px = half of (button height 23px + gap 11px) — offsets the 7th item ("소개")
+       this list has that Timeline's nav-rail doesn't, so both rails start at the same Y
+       despite Resume's list being taller. */
+    position: fixed; top: 50%; right: 18px; transform: translateY(calc(-50% + 17px)); z-index: 55;
     display: flex; flex-direction: column; gap: 11px;
   }
   #side-nav button {
     text-align: left; display: flex; align-items: center; justify-content: flex-start; gap: 6px; white-space: nowrap;
-    padding: 4px 9px; border-radius: 14px; cursor: pointer; font-family: inherit;
+    height: 23px; padding: 4px 9px; border-radius: 14px; cursor: pointer; font-family: inherit;
     border: 1px solid var(--line); box-shadow: 0 1px 4px rgba(0,0,0,.06);
     background: var(--card-bg); color: var(--ink); font-size: 10.5px; font-weight: 700;
     transition: all .2s ease;
