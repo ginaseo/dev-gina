@@ -13,21 +13,22 @@ const pillStyle: CSSProperties = {
   boxShadow: '0 1px 4px rgba(0,0,0,.06)',
 }
 
-const iconBtnStyle: CSSProperties = {
-  border: 'none', padding: '5px 9px', borderRadius: 7, fontSize: 13, cursor: 'pointer',
-  background: 'transparent', lineHeight: 1,
+const pillBtnBase: CSSProperties = {
+  border: 'none', borderRadius: 7, cursor: 'pointer', background: 'transparent',
+  height: 23, boxSizing: 'border-box', display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
 }
+
+const iconBtnStyle: CSSProperties = { ...pillBtnBase, padding: '0 9px', fontSize: 13 }
 
 function langBtnStyle(active: boolean): CSSProperties {
   return {
-    border: 'none', padding: '5px 10px', borderRadius: 7, fontSize: 11, fontWeight: 700, cursor: 'pointer',
+    ...pillBtnBase, padding: '0 10px', fontSize: 11, fontWeight: 700,
     background: active ? 'var(--card-bg)' : 'transparent', color: active ? 'var(--ink)' : 'var(--sub)',
   }
 }
 
 const linkBtnStyle: CSSProperties = {
-  padding: '5px 10px', borderRadius: 7, fontSize: 11, fontWeight: 700, color: 'var(--sub)',
-  textDecoration: 'none', display: 'inline-block', lineHeight: 1.4,
+  ...pillBtnBase, padding: '0 10px', fontSize: 11, fontWeight: 700, color: 'var(--sub)', textDecoration: 'none',
 }
 
 export default function TopControls({ language, onSetLanguage, isDark, onToggleDark }: Props) {

@@ -11,7 +11,7 @@ export default function Hero({ language, isMobile }: Props) {
   const photoSize = isMobile ? 56 : 68
 
   return (
-    <div id="hero" style={{ maxWidth: 900, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 22, padding: `${isMobile ? 32 : 44}px ${isMobile ? 20 : 24}px 20px` }}>
+    <div id="hero" style={{ maxWidth: 900, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 22, padding: `${isMobile ? 32 : 44}px ${isMobile ? 20 : 24}px 20px` }}>
       <div style={{
         width: photoSize, height: photoSize, borderRadius: '50%', overflow: 'hidden', flexShrink: 0,
         border: '1px solid var(--line)', background: `linear-gradient(135deg, ${BLUE}, ${PURPLE})`,

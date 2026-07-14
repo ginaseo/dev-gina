@@ -60,7 +60,7 @@
   a::after { content: '↗'; display: inline-block; font-size: 0.75em; margin-left: 1px; text-decoration: none; transform: translateY(-1px); }
 
   header { padding-top: 60px; padding-bottom: 8px; scroll-margin-top: 90px; }
-  .hero-row { display: flex; align-items: center; gap: 22px; }
+  .hero-row { display: flex; align-items: center; justify-content: center; gap: 22px; }
   .avatar {
     width: 68px; height: 68px; border-radius: 50%; flex-shrink: 0;
     background: linear-gradient(135deg, var(--blue), var(--purple));
@@ -102,12 +102,12 @@
     box-shadow: 0 1px 4px rgba(0,0,0,.06);
   }
   .pillgroup button, .pillgroup a {
-    border: none; border-radius: 7px; cursor: pointer;
-    background: transparent; line-height: 1; font-family: inherit; color: var(--sub); font-weight: 700;
-    text-decoration: none; display: inline-block;
+    border: none; border-radius: 7px; cursor: pointer; box-sizing: border-box; height: 23px;
+    background: transparent; font-family: inherit; color: var(--sub); font-weight: 700;
+    text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
   }
-  .pillgroup .icon-btn { padding: 5px 9px; font-size: 13px; }
-  .pillgroup .text-btn { padding: 5px 10px; font-size: 11px; }
+  .pillgroup .icon-btn { padding: 0 9px; font-size: 13px; }
+  .pillgroup .text-btn { padding: 0 10px; font-size: 11px; }
   .pillgroup button[aria-pressed="true"] { background: var(--bg); color: var(--ink); }
   .pillgroup button:focus-visible, .pillgroup a:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
   .pillgroup a::after { content: none; }
