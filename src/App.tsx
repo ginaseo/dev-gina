@@ -54,7 +54,7 @@ export default function App() {
 
   const sidePad = isMobile ? 20 : 24
   const gridCols = isMobile ? '1fr' : 'repeat(auto-fill,minmax(210px,1fr))'
-  const zigzagCols = isMobile ? '0px 22px 1fr' : '1fr 30px 1fr'
+  const zigzagCols = isMobile ? '1fr 22px 1fr' : '1fr 30px 1fr'
   const laneGap = isMobile ? '22px' : '30px'
   const chapterTopPad = isMobile ? 40 : 60
   const chapterFontSize = isMobile ? 19 : 22
