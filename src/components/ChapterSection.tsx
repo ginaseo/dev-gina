@@ -9,6 +9,7 @@ interface LayoutProps {
   chapterTopPad: number
   chapterFontSize: number
   yearFontSize: number
+  isMobile: boolean
 }
 
 interface Props {
@@ -17,7 +18,7 @@ interface Props {
 }
 
 export default function ChapterSection({ chapter: c, layout }: Props) {
-  const { sidePad, zigzagCols, laneGap, chapterTopPad, chapterFontSize, yearFontSize } = layout
+  const { sidePad, zigzagCols, laneGap, chapterTopPad, chapterFontSize, yearFontSize, isMobile } = layout
 
   return (
     <div style={{ maxWidth: 900, margin: '0 auto', padding: `${chapterTopPad}px ${sidePad}px ${chapterTopPad}px` }}>
@@ -50,19 +51,32 @@ export default function ChapterSection({ chapter: c, layout }: Props) {
             {grp.isOverlap && (
               <div style={{ padding: '4px 0', margin: '0 0 6px', position: 'relative' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: `1fr ${laneGap} 1fr` }}>
-                  {grp.rows.map((row) => (
-                    <div key={row.rowNum} style={{ display: 'contents' }}>
-                      <div style={{ gridColumn: 1, gridRow: row.rowNum, display: 'flex', justifyContent: 'flex-end', padding: '3.5px 0' }}>
-                        {row.l && <LaneCard node={row.l} laneColor={grp.laneLColor} laneLabel={grp.laneLLabel} />}
+                  {grp.rows.map((row) => {
+                    const single = isMobile && ((row.l && !row.r) || (!row.l && row.r))
+                    return (
+                      <div key={row.rowNum} style={{ display: 'contents' }}>
+                        {single ? (
+                          <div style={{ gridColumn: '1 / -1', gridRow: row.rowNum, display: 'flex', justifyContent: 'center', padding: '3.5px 0' }}>
+                            {row.l
+                              ? <LaneCard node={row.l} laneColor={grp.laneLColor} laneLabel={grp.laneLLabel} />
+                              : <LaneCard node={row.r!} laneColor={grp.laneRColor} laneLabel={grp.laneRLabel} />}
+                          </div>
+                        ) : (
+                          <>
+                            <div style={{ gridColumn: 1, gridRow: row.rowNum, display: 'flex', justifyContent: 'flex-end', padding: '3.5px 0' }}>
+                              {row.l && <LaneCard node={row.l} laneColor={grp.laneLColor} laneLabel={grp.laneLLabel} />}
+                            </div>
+                            <div style={{ gridColumn: 3, gridRow: row.rowNum, display: 'flex', justifyContent: 'flex-start', padding: '3.5px 0' }}>
+                              {row.r && <LaneCard node={row.r} laneColor={grp.laneRColor} laneLabel={grp.laneRLabel} />}
+                            </div>
+                          </>
+                        )}
+                        <div style={{ gridColumn: 2, gridRow: row.rowNum, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2 }}>
+                          <div style={{ width: row.dotSize, height: row.dotSize, borderRadius: '50%', background: row.dotColor, border: '2px solid var(--card-bg)', boxShadow: `0 0 0 1.5px ${row.dotColor}`, flexShrink: 0 }} />
+                        </div>
                       </div>
-                      <div style={{ gridColumn: 2, gridRow: row.rowNum, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <div style={{ width: row.dotSize, height: row.dotSize, borderRadius: '50%', background: row.dotColor, border: '2px solid var(--card-bg)', boxShadow: `0 0 0 1.5px ${row.dotColor}`, flexShrink: 0 }} />
-                      </div>
-                      <div style={{ gridColumn: 3, gridRow: row.rowNum, display: 'flex', justifyContent: 'flex-start', padding: '3.5px 0' }}>
-                        {row.r && <LaneCard node={row.r} laneColor={grp.laneRColor} laneLabel={grp.laneRLabel} />}
-                      </div>
-                    </div>
-                  ))}
+                    )
+                  })}
                 </div>
               </div>
             )}

@@ -9,6 +9,7 @@ interface Props {
   chapterTopPad: number
   chapterFontSize: number
   yearFontSize: number
+  isMobile: boolean
 }
 
 export default function TimelineView({ chapters, ...layout }: Props) {
