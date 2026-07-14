@@ -99,7 +99,6 @@ export default function App() {
               chapterTopPad={chapterTopPad}
               chapterFontSize={chapterFontSize}
               yearFontSize={yearFontSize}
-              isMobile={isMobile}
             />
           )}
           {viewMode === 'category' && (
