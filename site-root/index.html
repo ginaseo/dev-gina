@@ -82,13 +82,12 @@
   @media (min-width: 901px) {
     #skills { margin-top: 143px; }
   }
-  .section-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 2px; }
+  .section-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
   .section-num {
     width: 30px; height: 30px; border-radius: 9px; color: #fff; flex-shrink: 0;
     display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;
   }
   .section-period { margin-left: auto; font-size: 12.5px; color: var(--sub); white-space: nowrap; }
-  .section-theme { font-size: 13px; color: var(--sub); font-style: italic; margin: 6px 0 6px 42px; }
   h2 {
     font-size: 22px; font-weight: 800; letter-spacing: -0.01em; color: var(--ink); margin: 0;
   }
@@ -201,7 +200,6 @@
 
     <section id="skills">
       <div class="section-head"><span class="section-num" style="background: var(--blue);">1</span><h2 data-i18n="side.skills"></h2></div>
-      <div class="section-theme" data-i18n="skills.theme"></div>
       <ul>
         <li data-i18n="skills.li1"></li>
         <li data-i18n="skills.li2"></li>
@@ -212,7 +210,6 @@
 
     <section id="stack">
       <div class="section-head"><span class="section-num" style="background: var(--green);">2</span><h2 data-i18n="side.stack"></h2></div>
-      <div class="section-theme" data-i18n="stack.theme"></div>
       <ul class="plain">
         <li data-i18n="stack.li1"></li>
         <li data-i18n="stack.li2"></li>
@@ -227,7 +224,6 @@
 
     <section id="projects">
       <div class="section-head"><span class="section-num" style="background: var(--purple);">3</span><h2 data-i18n="side.projects"></h2><span class="section-period" data-i18n="projects.period"></span></div>
-      <div class="section-theme" data-i18n="projects.theme"></div>
 
       <div class="entry">
         <h3 data-i18n="projects.p1.title"></h3>
@@ -257,7 +253,6 @@
 
     <section id="careers">
       <div class="section-head"><span class="section-num" style="background: var(--red);">4</span><h2 data-i18n="side.careers"></h2><span class="section-period" data-i18n="careers.period"></span></div>
-      <div class="section-theme" data-i18n="careers.theme"></div>
       <div class="entry">
         <h3 data-i18n="careers.c1.title"></h3>
         <div class="meta" data-i18n="careers.c1.meta"></div>
@@ -274,7 +269,6 @@
 
     <section id="education">
       <div class="section-head"><span class="section-num" style="background: var(--gold);">5</span><h2 data-i18n="side.education"></h2></div>
-      <div class="section-theme" data-i18n="education.theme"></div>
       <ul class="plain">
         <li data-i18n="education.e1"></li>
         <li style="margin-top: 8px;" data-i18n="education.e2"></li>
@@ -285,7 +279,6 @@
 
     <section id="etc">
       <div class="section-head"><span class="section-num" style="background: var(--orange);">6</span><h2 data-i18n="side.etc"></h2><span class="section-period" data-i18n="etc.period"></span></div>
-      <div class="section-theme" data-i18n="etc.theme"></div>
       <p data-i18n="etc.p"></p>
       <ul>
         <li data-i18n="etc.li1"></li>
@@ -314,14 +307,8 @@
       'side.careers': '경력',
       'side.education': '교육',
       'side.etc': '기타',
-      'skills.theme': '측정과 검증으로 증명합니다',
-      'stack.theme': '실전에서 검증한 기술 스택',
-      'projects.theme': '숫자로 증명한 성과',
       'projects.period': '2026.03 – 05',
-      'careers.theme': '운영의 무게를 배운 시간',
       'careers.period': '2022 – 2023',
-      'education.theme': '기초부터 실전까지',
-      'etc.theme': '자동화를 향한 관심이 개발로 이어지다',
       'etc.period': '2011 – 2020',
       'skills.li1': 'list 조회 p95 98.7% 개선 (2,050ms → 26ms) — k6 기반 성능 측정·캐싱 설계로 검증',
       'skills.li2': 'Kafka 기반 이벤트 정합성 설계 — Outbox·Consumer 멱등성, 정합성·처리량 요구를 분리한 별도 파이프라인',
@@ -380,14 +367,8 @@
       'side.careers': 'Experience',
       'side.education': 'Education',
       'side.etc': 'Others',
-      'skills.theme': 'Proven through measurement and verification',
-      'stack.theme': 'A stack proven in production',
-      'projects.theme': 'Impact proven in numbers',
       'projects.period': 'Mar – May 2026',
-      'careers.theme': 'Where I learned the weight of operations',
       'careers.period': '2022 – 2023',
-      'education.theme': 'From fundamentals to production',
-      'etc.theme': 'A curiosity about automation led to development',
       'etc.period': '2011 – 2020',
       'skills.li1': 'Improved list-query p95 by 98.7% (2,050ms → 26ms) — verified with k6-based performance measurement and cache design',
       'skills.li2': 'Kafka-based event consistency design — Outbox · Consumer idempotency, with a separate pipeline for consistency vs. throughput requirements',
