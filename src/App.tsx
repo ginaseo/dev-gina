@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import type { CSSProperties } from 'react'
 import ProgressBar from './components/ProgressBar'
 import TopControls from './components/TopControls'
 import Hero from './components/Hero'
@@ -13,6 +12,7 @@ import { useViewport } from './hooks/useViewport'
 import { useScrollTracking } from './hooks/useScrollTracking'
 import { buildChapters, firstVisibleChapterIdx } from './lib/timelineLogic'
 import { scrollToChapter } from './lib/scroll'
+import { getLayoutConfig } from './lib/layoutConfig'
 import type { DisplayMode, Language, ViewMode } from './data/types'
 
 export default function App() {
@@ -52,14 +52,8 @@ export default function App() {
     [filterOpts, activeIdx, searchQuery],
   )
 
-  const sidePad = isMobile ? 20 : 24
-  const gridCols = isMobile ? '1fr' : 'repeat(auto-fill,minmax(210px,1fr))'
-  const zigzagCols = isMobile ? '1fr 22px 1fr' : '1fr 30px 1fr'
-  const laneGap = isMobile ? '22px' : '30px'
-  const chapterTopPad = isMobile ? 40 : 60
-  const chapterFontSize = isMobile ? 19 : 22
-  const yearFontSize = isMobile ? 13 : 16
-  const mainStyle = { '--card-w': isMobile ? '100%' : '235px', '--card-maxw': isMobile ? 'none' : '235px' } as CSSProperties
+  const { sidePad, gridCols, zigzagCols, laneGap, chapterTopPad, chapterFontSize, yearFontSize, mainStyle } =
+    getLayoutConfig(isMobile)
 
   return (
     <>
