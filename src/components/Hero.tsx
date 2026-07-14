@@ -12,7 +12,7 @@ export default function Hero({ language, isMobile }: Props) {
 
   return (
     <div id="hero" style={{ maxWidth: 900, margin: '0 auto', display: 'flex', justifyContent: 'center', padding: `${isMobile ? 32 : 44}px ${isMobile ? 20 : 24}px 20px` }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 22, width: isMobile ? '100%' : 420 }}>
+      <div style={{ display: 'flex', alignItems: 'flex-start', gap: 22, width: isMobile ? '100%' : 420 }}>
         <div style={{
           width: photoSize, height: photoSize, borderRadius: '50%', overflow: 'hidden', flexShrink: 0,
           border: '1px solid var(--line)', background: `linear-gradient(135deg, ${BLUE}, ${PURPLE})`,
