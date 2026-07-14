@@ -79,7 +79,9 @@
   .pitch strong { color: var(--accent); font-weight: 700; }
 
   section { margin-top: 88px; scroll-margin-top: 90px; }
-  #skills { margin-top: 143px; }
+  @media (min-width: 901px) {
+    #skills { margin-top: 143px; }
+  }
   .section-head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
   .section-num {
     width: 30px; height: 30px; border-radius: 9px; color: #fff; flex-shrink: 0;
@@ -119,7 +121,9 @@
   .pillgroup a::after { content: none; }
 
   #side-nav {
-    position: fixed; top: 50%; right: 18px; transform: translateY(-50%); z-index: 55;
+    /* extra +12.25px offsets the 7th item ("소개") this list has that Timeline's nav-rail
+       doesn't, so both rails start at the same Y despite Resume's list being taller. */
+    position: fixed; top: 50%; right: 18px; transform: translateY(calc(-50% + 12.25px)); z-index: 55;
     display: flex; flex-direction: column; gap: 11px;
   }
   #side-nav button {
@@ -465,10 +469,14 @@
 
   var root = document.documentElement;
   function systemDark() { return window.matchMedia('(prefers-color-scheme: dark)').matches; }
+  var storedTheme = localStorage.getItem('theme');
+  if (storedTheme === 'light' || storedTheme === 'dark') root.setAttribute('data-theme', storedTheme);
   document.getElementById('theme-toggle').addEventListener('click', function () {
     var current = root.getAttribute('data-theme');
     var isDark = current ? current === 'dark' : systemDark();
-    root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    var next = isDark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
   });
   document.getElementById('print-btn').addEventListener('click', function () {
     window.print();

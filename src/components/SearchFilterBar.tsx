@@ -35,6 +35,7 @@ export default function SearchFilterBar({
     const el = chipRowRef.current
     const input = searchInputRef.current
     if (!el || !input || !el.children.length) return
+    if (isMobile) { input.style.width = '100%'; return }
     const first = el.children[0].getBoundingClientRect()
     const last = el.children[el.children.length - 1].getBoundingClientRect()
     const w = Math.round(last.right - first.left)
@@ -58,7 +59,11 @@ export default function SearchFilterBar({
           style={{ width: '100%', maxWidth: '100%', boxSizing: 'border-box', border: '1px solid var(--line)', borderRadius: 8, padding: '8px 12px', fontSize: 12.5, background: 'var(--card-bg)', color: 'var(--ink)' }}
         />
       </div>
-      <div id="chip-row" ref={chipRowRef} style={{ maxWidth: 900, margin: '0 auto', padding: `0 ${isMobile ? 20 : 24}px 8px`, display: 'flex', justifyContent: isMobile ? 'flex-start' : 'center', gap: 7, overflowX: 'auto' }}>
+      <div id="chip-row" ref={chipRowRef} style={{
+        maxWidth: 900, margin: '0 auto', padding: `0 ${isMobile ? 20 : 24}px 8px`, display: 'flex',
+        flexWrap: isMobile ? 'wrap' : 'nowrap', justifyContent: 'center', gap: 7,
+        overflowX: isMobile ? 'visible' : 'auto',
+      }}>
         {CHIPS.map((cat) => {
           const active = activeCategory === cat.name
           return (
