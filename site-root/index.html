@@ -81,7 +81,7 @@
 
   section { margin-top: 88px; scroll-margin-top: 90px; }
   @media (min-width: 901px) {
-    #skills { margin-top: 143px; }
+    #skills { margin-top: 145.4px; }
   }
   .section-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
   .section-num {
@@ -124,9 +124,10 @@
   .pillgroup a::after { content: none; }
 
   #side-nav {
-    /* extra +12.25px offsets the 7th item ("소개") this list has that Timeline's nav-rail
-       doesn't, so both rails start at the same Y despite Resume's list being taller. */
-    position: fixed; top: 50%; right: 18px; transform: translateY(calc(-50% + 12.25px)); z-index: 55;
+    /* extra +8.75px offsets the 7th item ("소개") this list has that Timeline's nav-rail
+       doesn't, so both rails start at the same Y despite Resume's list being taller.
+       (measured under the real self-hosted font on the deployed site, not file:// fallback fonts) */
+    position: fixed; top: 50%; right: 18px; transform: translateY(calc(-50% + 8.75px)); z-index: 55;
     display: flex; flex-direction: column; gap: 11px;
   }
   #side-nav button {
