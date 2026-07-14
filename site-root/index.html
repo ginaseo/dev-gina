@@ -56,6 +56,7 @@
     font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', sans-serif;
   }
   .wrap { max-width: 900px; margin: 0 auto; padding: 0 28px 80px; }
+  .section-body { max-width: 640px; margin: 0 auto; }
   a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
   a::after { content: '↗'; display: inline-block; font-size: 0.75em; margin-left: 1px; text-decoration: none; transform: translateY(-1px); }
 
@@ -200,91 +201,102 @@
 
     <section id="skills">
       <div class="section-head"><span class="section-num" style="background: var(--blue);">1</span><h2 data-i18n="side.skills"></h2></div>
-      <ul>
-        <li data-i18n="skills.li1"></li>
-        <li data-i18n="skills.li2"></li>
-        <li data-i18n="skills.li3"></li>
-        <li data-i18n="skills.li4"></li>
-      </ul>
+      <div class="section-body">
+        <ul>
+          <li data-i18n="skills.li1"></li>
+          <li data-i18n="skills.li2"></li>
+          <li data-i18n="skills.li3"></li>
+          <li data-i18n="skills.li4"></li>
+        </ul>
+      </div>
     </section>
 
     <section id="stack">
       <div class="section-head"><span class="section-num" style="background: var(--green);">2</span><h2 data-i18n="side.stack"></h2></div>
-      <ul class="plain">
-        <li data-i18n="stack.li1"></li>
-        <li data-i18n="stack.li2"></li>
-        <li data-i18n="stack.li3"></li>
-        <li data-i18n="stack.li4"></li>
-        <li data-i18n="stack.li5"></li>
-        <li data-i18n="stack.li6"></li>
-        <li data-i18n="stack.li7"></li>
-        <li data-i18n="stack.li8"></li>
-      </ul>
+      <div class="section-body">
+        <ul class="plain">
+          <li data-i18n="stack.li1"></li>
+          <li data-i18n="stack.li2"></li>
+          <li data-i18n="stack.li3"></li>
+          <li data-i18n="stack.li4"></li>
+          <li data-i18n="stack.li5"></li>
+          <li data-i18n="stack.li6"></li>
+          <li data-i18n="stack.li7"></li>
+          <li data-i18n="stack.li8"></li>
+        </ul>
+      </div>
     </section>
 
     <section id="projects">
       <div class="section-head"><span class="section-num" style="background: var(--purple);">3</span><h2 data-i18n="side.projects"></h2><span class="section-period" data-i18n="projects.period"></span></div>
+      <div class="section-body">
+        <div class="entry">
+          <h3 data-i18n="projects.p1.title"></h3>
+          <div class="meta" data-i18n="projects.p1.meta"></div>
+          <div class="proj-headline" data-i18n="projects.p1.headline"></div>
+          <ul>
+            <li data-i18n="projects.p1.li1"></li>
+            <li data-i18n="projects.p1.li2"></li>
+            <li data-i18n="projects.p1.li3"></li>
+            <li data-i18n="projects.p1.li4"></li>
+          </ul>
+          <div class="tech" data-i18n="projects.p1.tech"></div>
+        </div>
 
-      <div class="entry">
-        <h3 data-i18n="projects.p1.title"></h3>
-        <div class="meta" data-i18n="projects.p1.meta"></div>
-        <div class="proj-headline" data-i18n="projects.p1.headline"></div>
-        <ul>
-          <li data-i18n="projects.p1.li1"></li>
-          <li data-i18n="projects.p1.li2"></li>
-          <li data-i18n="projects.p1.li3"></li>
-          <li data-i18n="projects.p1.li4"></li>
-        </ul>
-        <div class="tech" data-i18n="projects.p1.tech"></div>
-      </div>
-
-      <div class="entry">
-        <h3 data-i18n="projects.p2.title"></h3>
-        <div class="meta" data-i18n="projects.p2.meta"></div>
-        <div class="proj-headline" data-i18n="projects.p2.headline"></div>
-        <ul>
-          <li data-i18n="projects.p2.li1"></li>
-          <li data-i18n="projects.p2.li2"></li>
-          <li data-i18n="projects.p2.li3"></li>
-        </ul>
-        <div class="tech" data-i18n="projects.p2.tech"></div>
+        <div class="entry">
+          <h3 data-i18n="projects.p2.title"></h3>
+          <div class="meta" data-i18n="projects.p2.meta"></div>
+          <div class="proj-headline" data-i18n="projects.p2.headline"></div>
+          <ul>
+            <li data-i18n="projects.p2.li1"></li>
+            <li data-i18n="projects.p2.li2"></li>
+            <li data-i18n="projects.p2.li3"></li>
+          </ul>
+          <div class="tech" data-i18n="projects.p2.tech"></div>
+        </div>
       </div>
     </section>
 
     <section id="careers">
       <div class="section-head"><span class="section-num" style="background: var(--red);">4</span><h2 data-i18n="side.careers"></h2><span class="section-period" data-i18n="careers.period"></span></div>
-      <div class="entry">
-        <h3 data-i18n="careers.c1.title"></h3>
-        <div class="meta" data-i18n="careers.c1.meta"></div>
-        <ul>
-          <li data-i18n="careers.c1.li1"></li>
-          <li data-i18n="careers.c1.li2"></li>
-          <li data-i18n="careers.c1.li3"></li>
-          <li data-i18n="careers.c1.li4"></li>
-        </ul>
-        <div class="tech" data-i18n="careers.c1.tech"></div>
+      <div class="section-body">
+        <div class="entry">
+          <h3 data-i18n="careers.c1.title"></h3>
+          <div class="meta" data-i18n="careers.c1.meta"></div>
+          <ul>
+            <li data-i18n="careers.c1.li1"></li>
+            <li data-i18n="careers.c1.li2"></li>
+            <li data-i18n="careers.c1.li3"></li>
+            <li data-i18n="careers.c1.li4"></li>
+          </ul>
+          <div class="tech" data-i18n="careers.c1.tech"></div>
+        </div>
+        <p style="margin-top: 18px; font-size: 12px; color: var(--sub);" data-i18n="careers.oss"></p>
       </div>
-      <p style="margin-top: 18px; font-size: 12px; color: var(--sub);" data-i18n="careers.oss"></p>
     </section>
 
     <section id="education">
       <div class="section-head"><span class="section-num" style="background: var(--gold);">5</span><h2 data-i18n="side.education"></h2></div>
-      <ul class="plain">
-        <li data-i18n="education.e1"></li>
-        <li style="margin-top: 8px;" data-i18n="education.e2"></li>
-        <li style="margin-top: 8px;" data-i18n="education.e3"></li>
-        <li style="margin-top: 8px;" data-i18n="education.e4"></li>
-      </ul>
+      <div class="section-body">
+        <ul class="plain">
+          <li data-i18n="education.e1"></li>
+          <li style="margin-top: 8px;" data-i18n="education.e2"></li>
+          <li style="margin-top: 8px;" data-i18n="education.e3"></li>
+          <li style="margin-top: 8px;" data-i18n="education.e4"></li>
+        </ul>
+      </div>
     </section>
 
     <section id="etc">
       <div class="section-head"><span class="section-num" style="background: var(--orange);">6</span><h2 data-i18n="side.etc"></h2><span class="section-period" data-i18n="etc.period"></span></div>
-      <p data-i18n="etc.p"></p>
-      <ul>
-        <li data-i18n="etc.li1"></li>
-        <li data-i18n="etc.li2"></li>
-        <li data-i18n="etc.li3"></li>
-      </ul>
+      <div class="section-body">
+        <p data-i18n="etc.p"></p>
+        <ul>
+          <li data-i18n="etc.li1"></li>
+          <li data-i18n="etc.li2"></li>
+          <li data-i18n="etc.li3"></li>
+        </ul>
+      </div>
     </section>
   </div>
 
