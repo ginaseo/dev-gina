@@ -82,16 +82,19 @@
   @media (min-width: 901px) {
     #skills { margin-top: 143px; }
   }
-  .section-head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 2px; }
   .section-num {
     width: 30px; height: 30px; border-radius: 9px; color: #fff; flex-shrink: 0;
     display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;
   }
+  .section-period { margin-left: auto; font-size: 12.5px; color: var(--sub); white-space: nowrap; }
+  .section-theme { font-size: 13px; color: var(--sub); font-style: italic; margin: 6px 0 6px 42px; }
   h2 {
     font-size: 22px; font-weight: 800; letter-spacing: -0.01em; color: var(--ink); margin: 0;
   }
   h3 { font-size: 14px; font-weight: 700; margin: 0; }
   .meta { font-size: 12px; color: var(--sub); margin-top: 2px; }
+  .proj-headline { font-size: 13.5px; font-weight: 700; color: var(--accent); margin-top: 10px; line-height: 1.6; }
   .entry { margin-top: 22px; }
   .entry:first-child { margin-top: 0; }
   ul { font-size: 13px; line-height: 1.8; margin: 10px 0 0; padding-left: 18px; color: var(--ink); }
@@ -198,18 +201,18 @@
 
     <section id="skills">
       <div class="section-head"><span class="section-num" style="background: var(--blue);">1</span><h2 data-i18n="side.skills"></h2></div>
+      <div class="section-theme" data-i18n="skills.theme"></div>
       <ul>
         <li data-i18n="skills.li1"></li>
         <li data-i18n="skills.li2"></li>
         <li data-i18n="skills.li3"></li>
         <li data-i18n="skills.li4"></li>
-        <li data-i18n="skills.li5"></li>
-        <li data-i18n="skills.li6"></li>
       </ul>
     </section>
 
     <section id="stack">
       <div class="section-head"><span class="section-num" style="background: var(--green);">2</span><h2 data-i18n="side.stack"></h2></div>
+      <div class="section-theme" data-i18n="stack.theme"></div>
       <ul class="plain">
         <li data-i18n="stack.li1"></li>
         <li data-i18n="stack.li2"></li>
@@ -223,15 +226,18 @@
     </section>
 
     <section id="projects">
-      <div class="section-head"><span class="section-num" style="background: var(--purple);">3</span><h2 data-i18n="side.projects"></h2></div>
+      <div class="section-head"><span class="section-num" style="background: var(--purple);">3</span><h2 data-i18n="side.projects"></h2><span class="section-period" data-i18n="projects.period"></span></div>
+      <div class="section-theme" data-i18n="projects.theme"></div>
 
       <div class="entry">
         <h3 data-i18n="projects.p1.title"></h3>
         <div class="meta" data-i18n="projects.p1.meta"></div>
+        <div class="proj-headline" data-i18n="projects.p1.headline"></div>
         <ul>
           <li data-i18n="projects.p1.li1"></li>
           <li data-i18n="projects.p1.li2"></li>
           <li data-i18n="projects.p1.li3"></li>
+          <li data-i18n="projects.p1.li4"></li>
         </ul>
         <div class="tech" data-i18n="projects.p1.tech"></div>
       </div>
@@ -239,19 +245,19 @@
       <div class="entry">
         <h3 data-i18n="projects.p2.title"></h3>
         <div class="meta" data-i18n="projects.p2.meta"></div>
+        <div class="proj-headline" data-i18n="projects.p2.headline"></div>
         <ul>
           <li data-i18n="projects.p2.li1"></li>
           <li data-i18n="projects.p2.li2"></li>
           <li data-i18n="projects.p2.li3"></li>
-          <li data-i18n="projects.p2.li4"></li>
-          <li data-i18n="projects.p2.li5"></li>
         </ul>
         <div class="tech" data-i18n="projects.p2.tech"></div>
       </div>
     </section>
 
     <section id="careers">
-      <div class="section-head"><span class="section-num" style="background: var(--red);">4</span><h2 data-i18n="side.careers"></h2></div>
+      <div class="section-head"><span class="section-num" style="background: var(--red);">4</span><h2 data-i18n="side.careers"></h2><span class="section-period" data-i18n="careers.period"></span></div>
+      <div class="section-theme" data-i18n="careers.theme"></div>
       <div class="entry">
         <h3 data-i18n="careers.c1.title"></h3>
         <div class="meta" data-i18n="careers.c1.meta"></div>
@@ -268,6 +274,7 @@
 
     <section id="education">
       <div class="section-head"><span class="section-num" style="background: var(--gold);">5</span><h2 data-i18n="side.education"></h2></div>
+      <div class="section-theme" data-i18n="education.theme"></div>
       <ul class="plain">
         <li data-i18n="education.e1"></li>
         <li style="margin-top: 8px;" data-i18n="education.e2"></li>
@@ -277,7 +284,8 @@
     </section>
 
     <section id="etc">
-      <div class="section-head"><span class="section-num" style="background: var(--orange);">6</span><h2 data-i18n="side.etc"></h2></div>
+      <div class="section-head"><span class="section-num" style="background: var(--orange);">6</span><h2 data-i18n="side.etc"></h2><span class="section-period" data-i18n="etc.period"></span></div>
+      <div class="section-theme" data-i18n="etc.theme"></div>
       <p data-i18n="etc.p"></p>
       <ul>
         <li data-i18n="etc.li1"></li>
@@ -306,40 +314,48 @@
       'side.careers': '경력',
       'side.education': '교육',
       'side.etc': '기타',
-      'skills.li1': '운영 시스템 개발·유지보수 경력 1년 5개월',
-      'skills.li2': 'Kafka 기반 이벤트 정합성 설계 (Outbox · Consumer 멱등성)',
-      'skills.li3': '정합성 vs 처리량 분리 설계 — 추천용 행동 로그(action.log) 수집 파이프라인 단독 설계 (Kafka fan-out, at-most-once)',
-      'skills.li4': 'k6 기반 성능 측정 및 list 조회 p95 98.7% 개선',
-      'skills.li5': 'AI 레버리지 — 의사결정·검증은 본인, 코드 생산은 AI (최소 토큰·최대 효율)',
-      'skills.li6': '설계 문서 원저자 — 두 프로젝트 모두 docs 담당 지목 (문서 기반 협업)',
+      'skills.theme': '측정과 검증으로 증명합니다',
+      'stack.theme': '실전에서 검증한 기술 스택',
+      'projects.theme': '숫자로 증명한 성과',
+      'projects.period': '2026.03 – 05',
+      'careers.theme': '운영의 무게를 배운 시간',
+      'careers.period': '2022 – 2023',
+      'education.theme': '기초부터 실전까지',
+      'etc.theme': '자동화에 대한 관심이 개발로 이어지다',
+      'etc.period': '2011 – 2020',
+      'skills.li1': 'list 조회 p95 98.7% 개선 (2,050ms → 26ms) — k6 기반 성능 측정·캐싱 설계로 검증',
+      'skills.li2': 'Kafka 기반 이벤트 정합성 설계 — Outbox · Consumer 멱등성, 정합성·처리량 요구를 분리한 별도 파이프라인 설계',
+      'skills.li3': 'AI 레버리지 — 설계·검증은 직접 수행하고, 구현·테스트 자동화에 AI를 활용해 개발 생산성을 높입니다',
+      'skills.li4': '운영 시스템 개발·유지보수 경력 1년 5개월, 두 프로젝트 설계 문서 원저자로 지목 (문서 기반 협업)',
       'stack.li1': '<b>Backend</b> — Java, Spring Boot, JPA, REST API',
       'stack.li2': '<b>Messaging</b> — Apache Kafka (Outbox · Consumer 멱등성 · acks=0 fire-and-forget)',
       'stack.li3': '<b>AI · Search</b> — Spring AI, Caffeine Cache, Elasticsearch (kNN 추천은 AI팀 협업)',
       'stack.li4': '<b>Database</b> — PostgreSQL, MariaDB, MyBatis',
       'stack.li5': '<b>Infra</b> — Docker, k3s, AWS EC2, Spring Cloud Gateway, Eureka, MSA, Hexagonal',
-      'stack.li6': '<b>Performance</b> — k6 (capacity 곡선 · saturation cliff)',
+      'stack.li6': '<b>Performance</b> — k6 기반 부하 테스트·병목 분석',
       'stack.li7': '<b>Security</b> — JWT, Refresh Token Rotation, Internal API 가드',
       'stack.li8': '<b>Tools</b> — Git/GitHub, eGovFrame',
       'projects.p1.title': 'DevTicket — 개발자 행사 통합 티켓 커머스',
       'projects.p1.meta': '2026.04 – 05 · MSA 9개 마이크로서비스 · 박치기공룡 6명 · 중간 합류',
-      'projects.p1.li1': 'list 조회 p95 98.7% 개선 (2,050ms → 26ms) — @Cacheable 확장, EventCacheEvictor 구현, k6 부하 테스트 인프라 1인 구축(VU 400·370RPS·error 0), Gateway 병목 관찰 후 Replica 확장',
-      'projects.p1.li2': 'action.log 수집 파이프라인 단독 설계·구현 — 추천 로그·비즈니스 이벤트 정합성 요구 분리, fire-and-forget 채널(acks=0) 별도 설계',
-      'projects.p1.li3': '9개 모듈 통합 문서 작성 — 팀 합의로 docs 담당 지목',
+      'projects.p1.headline': 'list 조회 p95 98.7% 개선 (2,050ms → 26ms)',
+      'projects.p1.li1': '@Cacheable 확장, EventCacheEvictor 구현으로 캐시 정합성 사이클 완성',
+      'projects.p1.li2': 'k6 기반 부하 테스트 인프라 구축 (370 RPS 검증, Error 0), Gateway 병목 관찰 후 Replica 확장',
+      'projects.p1.li3': 'action.log 수집 파이프라인 단독 설계·구현 — 추천 로그·비즈니스 이벤트 정합성 요구 분리',
+      'projects.p1.li4': '9개 모듈 통합 문서 작성 — 팀 합의로 docs 담당 지목',
       'projects.p1.tech': '<b>Tech</b> Java 21 · Spring Boot · JPA · PostgreSQL · Apache Kafka · Elasticsearch · Caffeine · k6 · Docker · k3s · AWS EC2 · MSA · <a href="https://github.com/prgrms-be-adv-devcourse/beadv5_1_HeadbuttingDinosaur_BE/pulls?q=is%3Apr+author%3Aginaseo+is%3Aclosed">GitHub PR</a>',
       'projects.p2.title': 'BookCommerce — 도서 이커머스 플랫폼',
       'projects.p2.meta': '2026.03 · MSA 5개 마이크로서비스 · 404 Not Found 3명 · PO 겸 Backend',
+      'projects.p2.headline': '인원 축소(6→3명) 속 우선순위 재조정으로 MVP 완주 — 세미 프로젝트 팀 공동 1위',
       'projects.p2.li1': 'PO — 도메인 경계 수립, 일정·이슈 관리, /docs 9개 설계 문서 원저자',
       'projects.p2.li2': '회원 모듈 단독 구현 — JWT 인증 서버 (Refresh Token Rotation · 탈취 감지 · Gateway 단일 검증)',
       'projects.p2.li3': '주문 모듈 단독 구현 — 장바구니·주문 생성 (헥사고날 0→1)',
-      'projects.p2.li4': '인원 축소(6→3명) PO 위기 대응 — 우선순위 재정렬, 미완 기능 STUB 정직 표기',
-      'projects.p2.li5': '세미 프로젝트 팀 공동 1위',
       'projects.p2.tech': '<b>Tech</b> Java 21 · Spring Boot · JPA · PostgreSQL · Spring Cloud Gateway · Eureka · Kafka · JWT · Docker · AWS EC2 · MSA · 헥사고날 · <a href="https://github.com/prgrms-be-adv-devcourse/beadv5_5_404_Not_Found_BE/pulls?q=is%3Apr+is%3Aclosed">GitHub PR</a>',
       'careers.c1.title': '리얼인벤션 — Java Backend Developer',
       'careers.c1.meta': '2022.05 – 2023.09 (1년 5개월) · 공공·연구기관 SI 외주 — 7개 시스템 CRUD 신규·운영',
-      'careers.c1.li1': '교육 정책 시스템 — 신규 기능 개발과 운영 유지보수 병행, 설계 산출물 작성',
-      'careers.c1.li2': '입시정보 포털(2023.02, 정부 공개 사이트) — 설계 산출물 한 달 단독 작성, 정부 보안성 검토 취약점 당일 진단·수정',
+      'careers.c1.li1': '공공·연구기관 7개 시스템 신규 개발과 운영을 병행 — 3개 시스템 동시 유지보수',
+      'careers.c1.li2': '입시정보 포털(2023.02, 정부 공개 사이트) 설계 산출물 단독 작성, 정부 보안성 검토 취약점 당일 진단·수정',
       'careers.c1.li3': '사업·회원 관리 / 성과 관리 시스템 — MyBatis 기반 화면·백엔드 풀스택 신규 개발',
-      'careers.c1.li4': '운영 유지보수 3개 시스템 병행, 공통 모듈 확장 재사용 trade-off 판단',
+      'careers.c1.li4': '공통 모듈 확장 재사용 여부를 매번 trade-off로 판단 — 유지보수성과 개발 속도 균형',
       'careers.c1.tech': '<b>Tech</b> Java · Spring · MyBatis · eGovFrame · MariaDB',
       'careers.oss': 'OSS — create-react-app 문서 패치 · <a href="https://github.com/react/create-react-app/pull/17080">PR #17080</a> (Meta CLA Signed)',
       'education.e1': '<h3 style="display:inline;font-size:13px;">프로그래머스</h3> · Spring AI·MSA 기반 백엔드 교육 — 세미 프로젝트(BookCommerce) 팀 공동 1위 · 질문왕 수상 <span class="meta" style="display:inline;">(2026.03 – 05)</span>',
@@ -364,40 +380,48 @@
       'side.careers': 'Experience',
       'side.education': 'Education',
       'side.etc': 'Others',
-      'skills.li1': '1 year 5 months developing and maintaining production systems',
-      'skills.li2': 'Kafka-based event consistency design (Outbox · Consumer idempotency)',
-      'skills.li3': 'Separated consistency vs. throughput concerns — solely designed the action.log collection pipeline for recommendations (Kafka fan-out, at-most-once)',
-      'skills.li4': 'k6-based performance measurement — improved list-query p95 by 98.7%',
-      'skills.li5': 'AI leverage — decisions and verification are mine, code generation is AI\'s (minimum tokens, maximum efficiency)',
-      'skills.li6': 'Original author of design docs — assigned docs owner on both projects (documentation-driven collaboration)',
+      'skills.theme': 'Proven through measurement and verification',
+      'stack.theme': 'A stack proven in production',
+      'projects.theme': 'Impact proven in numbers',
+      'projects.period': 'Mar – May 2026',
+      'careers.theme': 'Where I learned the weight of operations',
+      'careers.period': '2022 – 2023',
+      'education.theme': 'From fundamentals to production',
+      'etc.theme': 'A curiosity about automation led to development',
+      'etc.period': '2011 – 2020',
+      'skills.li1': 'Improved list-query p95 by 98.7% (2,050ms → 26ms) — verified with k6-based performance measurement and cache design',
+      'skills.li2': 'Kafka-based event consistency design — Outbox · Consumer idempotency, with a separate pipeline for consistency vs. throughput requirements',
+      'skills.li3': 'AI leverage — I own design and verification directly, and use AI to automate implementation and test generation for higher development throughput',
+      'skills.li4': '1 year 5 months developing and maintaining production systems; assigned docs owner on both projects (documentation-driven collaboration)',
       'stack.li1': '<b>Backend</b> — Java, Spring Boot, JPA, REST API',
       'stack.li2': '<b>Messaging</b> — Apache Kafka (Outbox · Consumer idempotency · acks=0 fire-and-forget)',
       'stack.li3': '<b>AI · Search</b> — Spring AI, Caffeine Cache, Elasticsearch (kNN recommendation built with the AI team)',
       'stack.li4': '<b>Database</b> — PostgreSQL, MariaDB, MyBatis',
       'stack.li5': '<b>Infra</b> — Docker, k3s, AWS EC2, Spring Cloud Gateway, Eureka, MSA, Hexagonal',
-      'stack.li6': '<b>Performance</b> — k6 (capacity curves · saturation cliff)',
+      'stack.li6': '<b>Performance</b> — k6 load testing & bottleneck analysis',
       'stack.li7': '<b>Security</b> — JWT, Refresh Token Rotation, internal API guards',
       'stack.li8': '<b>Tools</b> — Git/GitHub, eGovFrame',
       'projects.p1.title': 'DevTicket — Integrated Ticket Commerce for Developer Events',
       'projects.p1.meta': 'Apr–May 2026 · MSA, 9 microservices · Team Headbutting Dinosaur (6) · joined mid-project',
-      'projects.p1.li1': 'Improved list-query p95 by 98.7% (2,050ms → 26ms) — extended @Cacheable, implemented EventCacheEvictor, single-handedly built k6 load-test infra (VU 400 · 370 RPS · zero errors), then scaled replicas after the improved latency exposed a Gateway bottleneck',
-      'projects.p1.li2': 'Solely designed and built the action.log collection pipeline — separated consistency requirements between recommendation logs and business events, designing a dedicated fire-and-forget channel (acks=0)',
-      'projects.p1.li3': 'Authored unified documentation across 9 modules — assigned docs owner by team consensus',
+      'projects.p1.headline': 'Improved list-query p95 by 98.7% (2,050ms → 26ms)',
+      'projects.p1.li1': 'Extended @Cacheable and implemented EventCacheEvictor to complete the cache-consistency cycle',
+      'projects.p1.li2': 'Built k6 load-test infrastructure (verified 370 RPS, zero errors), then scaled replicas after the improved latency exposed a Gateway bottleneck',
+      'projects.p1.li3': 'Solely designed and built the action.log collection pipeline — separated consistency requirements between recommendation logs and business events',
+      'projects.p1.li4': 'Authored unified documentation across 9 modules — assigned docs owner by team consensus',
       'projects.p1.tech': '<b>Tech</b> Java 21 · Spring Boot · JPA · PostgreSQL · Apache Kafka · Elasticsearch · Caffeine · k6 · Docker · k3s · AWS EC2 · MSA · <a href="https://github.com/prgrms-be-adv-devcourse/beadv5_1_HeadbuttingDinosaur_BE/pulls?q=is%3Apr+author%3Aginaseo+is%3Aclosed">GitHub PR</a>',
       'projects.p2.title': 'BookCommerce — Book E-commerce Platform',
       'projects.p2.meta': 'Mar 2026 · MSA, 5 microservices · Team 404 Not Found (3) · PO + Backend',
+      'projects.p2.headline': 'Reprioritized and shipped the MVP through a 6→3 team-size crunch — co-won 1st place in the semi-project',
       'projects.p2.li1': 'PO — established domain boundaries, managed schedule/issues, original author of 9 design docs',
       'projects.p2.li2': 'Solely implemented the member module — JWT auth server (refresh token rotation · theft detection · single verification at the Gateway)',
       'projects.p2.li3': 'Solely implemented the order module — cart · order creation (hexagonal architecture, 0→1)',
-      'projects.p2.li4': 'Handled a PO crisis when the team shrank from 6 to 3 — reprioritized scope, honestly marked unfinished features as STUB',
-      'projects.p2.li5': 'Co-won 1st place in the semi-project',
       'projects.p2.tech': '<b>Tech</b> Java 21 · Spring Boot · JPA · PostgreSQL · Spring Cloud Gateway · Eureka · Kafka · JWT · Docker · AWS EC2 · MSA · Hexagonal · <a href="https://github.com/prgrms-be-adv-devcourse/beadv5_5_404_Not_Found_BE/pulls?q=is%3Apr+is%3Aclosed">GitHub PR</a>',
       'careers.c1.title': 'RealInvention — Java Backend Developer',
       'careers.c1.meta': 'May 2022 – Sep 2023 (1 yr 5 mo) · Public/research-institute SI outsourcing — 7 systems, new development + operations',
-      'careers.c1.li1': 'Education policy system — built new features alongside ongoing operational maintenance, authored design docs',
-      'careers.c1.li2': 'Admissions info portal (Feb 2023, public government site) — solely authored design docs over one month; diagnosed and fixed a security vulnerability same-day per a government security review',
+      'careers.c1.li1': 'Built and operated 7 public/research-institute systems — maintained 3 of them concurrently',
+      'careers.c1.li2': 'Admissions info portal (Feb 2023, public government site) — solely authored design docs; diagnosed and fixed a security vulnerability same-day per a government security review',
       'careers.c1.li3': 'Business/member management & performance management systems — built new full-stack features (UI + backend) on MyBatis',
-      'careers.c1.li4': 'Maintained 3 systems in parallel; judged trade-offs on extending shared modules for reuse',
+      'careers.c1.li4': 'Judged trade-offs on extending shared modules for reuse each time — balancing maintainability against delivery speed',
       'careers.c1.tech': '<b>Tech</b> Java · Spring · MyBatis · eGovFrame · MariaDB',
       'careers.oss': 'OSS — documentation patch to create-react-app · <a href="https://github.com/react/create-react-app/pull/17080">PR #17080</a> (Meta CLA signed)',
       'education.e1': '<h3 style="display:inline;font-size:13px;">Programmers</h3> · Spring AI · MSA-based backend training — co-1st place team (BookCommerce), Most Inquisitive individual award <span class="meta" style="display:inline;">(Mar–May 2026)</span>',
