@@ -8,11 +8,11 @@
 </head>
 <body>
 
-<div id="progress-track" style="position: fixed; top: 0; left: 0; right: 0; height: 3px; background: var(--progress-track-bg); z-index: 60;">
-  <div id="progress-fill" style="height: 100%; background: var(--filled-line); width: 0%; transition: width .1s linear;"></div>
+<div id="progress-track">
+  <div id="progress-fill"></div>
 </div>
 
-<div style="position: relative; background: var(--bg); min-height: 100vh;">
+<div id="page-shell">
 
   <div id="top-controls">
     <div class="pillgroup">
@@ -49,7 +49,7 @@
     </header>
 
     <section id="skills">
-      <div class="section-head"><span class="section-num" style="background: var(--blue);">1</span><h2 data-i18n="side.skills"></h2></div>
+      <div class="section-head"><span class="section-num">1</span><h2 data-i18n="side.skills"></h2></div>
       <div class="section-body">
         <ul>
           <li data-i18n="skills.li1"></li>
@@ -61,7 +61,7 @@
     </section>
 
     <section id="stack">
-      <div class="section-head"><span class="section-num" style="background: var(--green);">2</span><h2 data-i18n="side.stack"></h2></div>
+      <div class="section-head"><span class="section-num">2</span><h2 data-i18n="side.stack"></h2></div>
       <div class="section-body">
         <ul class="plain">
           <li data-i18n="stack.li1"></li>
@@ -77,7 +77,7 @@
     </section>
 
     <section id="projects">
-      <div class="section-head"><span class="section-num" style="background: var(--purple);">3</span><h2 data-i18n="side.projects"></h2><span class="section-period" data-i18n="projects.period"></span></div>
+      <div class="section-head"><span class="section-num">3</span><h2 data-i18n="side.projects"></h2><span class="section-period" data-i18n="projects.period"></span></div>
       <div class="section-body">
         <div class="entry">
           <h3 data-i18n="projects.p1.title"></h3>
@@ -107,7 +107,7 @@
     </section>
 
     <section id="careers">
-      <div class="section-head"><span class="section-num" style="background: var(--red);">4</span><h2 data-i18n="side.careers"></h2><span class="section-period" data-i18n="careers.period"></span></div>
+      <div class="section-head"><span class="section-num">4</span><h2 data-i18n="side.careers"></h2><span class="section-period" data-i18n="careers.period"></span></div>
       <div class="section-body">
         <div class="entry">
           <h3 data-i18n="careers.c1.title"></h3>
@@ -120,24 +120,24 @@
           </ul>
           <div class="tech" data-i18n="careers.c1.tech"></div>
         </div>
-        <p style="margin-top: 18px; font-size: 12px; color: var(--sub);" data-i18n="careers.oss"></p>
+        <p class="oss-note" data-i18n="careers.oss"></p>
       </div>
     </section>
 
     <section id="education">
-      <div class="section-head"><span class="section-num" style="background: var(--gold);">5</span><h2 data-i18n="side.education"></h2></div>
+      <div class="section-head"><span class="section-num">5</span><h2 data-i18n="side.education"></h2></div>
       <div class="section-body">
         <ul class="plain">
           <li data-i18n="education.e1"></li>
-          <li style="margin-top: 8px;" data-i18n="education.e2"></li>
-          <li style="margin-top: 8px;" data-i18n="education.e3"></li>
-          <li style="margin-top: 8px;" data-i18n="education.e4"></li>
+          <li data-i18n="education.e2"></li>
+          <li data-i18n="education.e3"></li>
+          <li data-i18n="education.e4"></li>
         </ul>
       </div>
     </section>
 
     <section id="etc">
-      <div class="section-head"><span class="section-num" style="background: var(--orange);">6</span><h2 data-i18n="side.etc"></h2><span class="section-period" data-i18n="etc.period"></span></div>
+      <div class="section-head"><span class="section-num">6</span><h2 data-i18n="side.etc"></h2><span class="section-period" data-i18n="etc.period"></span></div>
       <div class="section-body">
         <p data-i18n="etc.p"></p>
         <ul>
@@ -149,7 +149,7 @@
     </section>
   </div>
 
-  <div id="bottom-spacer" style="min-height: 55vh;"></div>
+  <div id="bottom-spacer"></div>
 </div>
 
 <script src="/dev-gina/i18n.js"></script>
