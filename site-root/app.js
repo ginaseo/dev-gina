@@ -6,7 +6,8 @@
     { id: 'projects', color: 'var(--purple)', num: 3 },
     { id: 'careers', color: 'var(--red)', num: 4 },
     { id: 'education', color: 'var(--gold)', num: 5 },
-    { id: 'etc', color: 'var(--orange)', num: 6 },
+    { id: 'certs', color: 'var(--sky)', num: 6 },
+    { id: 'etc', color: 'var(--orange)', num: 7 },
   ];
   var sideNav = document.getElementById('side-nav');
   NAV_ORDER.forEach(function (entry) {

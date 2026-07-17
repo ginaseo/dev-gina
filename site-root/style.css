@@ -115,13 +115,21 @@ p { font-size: 13px; line-height: 1.8; margin: 0; }
 #bottom-spacer { min-height: 55vh; }
 .oss-note { margin-top: 18px; font-size: 12px; color: var(--sub); }
 #education h3 { display: inline; font-size: 13px; }
-#education li + li { margin-top: 8px; }
+#education > .section-body > ul.plain > li + li { margin-top: 8px; }
+#education li ul { list-style-type: disc; margin-top: 4px; }
+#education li ul li + li { margin-top: 4px; }
+#etc .entry h3 { display: inline; }
+#etc .entry .meta { display: inline; margin-top: 0; margin-left: 8px; }
+#etc .entry ul { margin-top: 6px; }
+#certs h3 { display: inline; font-size: 13px; }
+#certs li + li { margin-top: 8px; }
 
 #skills .section-num { background: var(--blue); }
 #stack .section-num { background: var(--green); }
 #projects .section-num { background: var(--purple); }
 #careers .section-num { background: var(--red); }
 #education .section-num { background: var(--gold); }
+#certs .section-num { background: var(--sky); }
 #etc .section-num { background: var(--orange); }
 
 #top-controls {
@@ -165,12 +173,70 @@ p { font-size: 13px; line-height: 1.8; margin: 0; }
 #side-nav button.active .section-dot { background: #fff; }
 #side-nav button:hover:not(.active) { color: var(--accent); }
 
+/* Print-only resume — separate DOM (#print-resume in index.html), never rendered on screen.
+   Screen keeps the timeline-style colored/spacious layout untouched; paper gets its own
+   editorial composition (refresh.cv-inspired structure, not its CSS/markup). */
+#print-resume { display: none; }
+
 @media print {
-  #top-controls, #side-nav, #bottom-spacer, #progress-track { display: none !important; }
-  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  :root { --bg: #fff !important; --ink: oklch(20% 0.01 80) !important; --sub: oklch(45% 0.01 80) !important; --line: oklch(90% 0.005 80) !important; }
-  section { break-inside: avoid; }
-  @page { size: A4; margin: 16mm; }
+  @page { size: A4; margin: 18mm; }
+
+  #progress-track, #page-shell { display: none !important; }
+
+  #print-resume {
+    display: block !important;
+    color: oklch(20% 0.01 80);
+    background: #fff;
+  }
+  #print-resume * { box-shadow: none !important; }
+  #print-resume a { color: inherit; text-decoration: none; }
+
+  .pr-header { text-align: left; }
+  .pr-header h1 { font-size: 52px; font-weight: 800; letter-spacing: -0.02em; margin: 0; line-height: 1.1; }
+  .pr-role { font-size: 13pt; margin-top: 6px; }
+  .pr-contact { font-size: 11pt; margin-top: 12px; display: flex; gap: 16px; }
+  .pr-summary { font-size: 11.5pt; line-height: 1.5; margin-top: 16px; max-width: 62ch; }
+
+  .pr-section { margin-top: 34px; break-inside: avoid; page-break-inside: avoid; }
+  .pr-section h2 {
+    font-size: 22px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 16px;
+    padding-bottom: 6px; border-bottom: 1.5px solid oklch(20% 0.01 80);
+  }
+
+  .pr-skills { margin: 0; padding-left: 18px; }
+  .pr-skills li { font-size: 11.5pt; line-height: 1.5; margin-top: 10px; }
+  .pr-skills li:first-child { margin-top: 0; }
+
+  .pr-stack { margin: 0; padding-left: 0; list-style: none; }
+  .pr-stack li { font-size: 11.5pt; line-height: 1.6; margin-top: 7px; }
+  .pr-stack li:first-child { margin-top: 0; }
+  .pr-stack li b { display: inline-block; width: 112px; font-weight: 700; }
+
+  .pr-entry { margin-top: 24px; break-inside: avoid; page-break-inside: avoid; }
+  .pr-entry:first-child { margin-top: 0; }
+  .pr-entry h3 { font-size: 11.5pt; font-weight: 700; margin: 0; }
+  .pr-meta { font-size: 10.5pt; margin-top: 3px; text-align: right; }
+  .pr-headline { font-size: 11.5pt; font-weight: 700; margin-top: 9px; }
+  .pr-entry ul { font-size: 11pt; line-height: 1.5; margin: 9px 0 0; padding-left: 17px; }
+  .pr-entry li + li { margin-top: 5px; }
+  .pr-tech { font-size: 10pt; margin-top: 9px; }
+
+  .pr-oss { font-size: 10pt; margin-top: 16px; }
+
+  .pr-plain { list-style: none; padding-left: 0; margin: 0; }
+  .pr-plain li { font-size: 11pt; line-height: 1.5; }
+  .pr-plain > li { margin-top: 11px; }
+  .pr-plain > li:first-child { margin-top: 0; }
+  .pr-plain h3 { display: inline; font-size: 11.5pt; }
+  .pr-plain li ul { list-style-type: disc; margin-top: 4px; }
+  .pr-plain li ul li + li { margin-top: 4px; }
+
+  .pr-etc p { font-size: 11pt; line-height: 1.5; margin: 0; }
+  .pr-etc .pr-entry { margin-top: 14px; }
+  .pr-etc .pr-entry h3 { display: inline; font-size: 11.5pt; }
+  .pr-etc .pr-entry .pr-meta { display: inline; text-align: left; margin-top: 0; margin-left: 8px; }
+  .pr-etc ul { font-size: 10.5pt; line-height: 1.5; margin-top: 6px; padding-left: 17px; }
+  .pr-etc li + li { margin-top: 4px; }
 }
 
 @media (max-width: 900px) {
