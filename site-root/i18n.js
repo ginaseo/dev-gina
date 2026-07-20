@@ -29,8 +29,8 @@ var I18N = {
 
     'projects.p1.title': 'Hermes Knowledge Engine | AI 기반 개인 지식·데이터 자동화 파이프라인',
     'projects.p1.date': '2026.06 – 진행중',
+    'projects.p1.quote': '주식 데이터 수집부터 위험 분석, AI 지식 저장, 메신저 알림까지 무인 자동화',
     'projects.p1.meta': '개인 프로젝트 · 기획·설계',
-    'projects.p1.summary': '주식 데이터 스크리닝부터 Slack 브리핑, AI 지식 저장소 구축까지 잇는 무인 자동화 파이프라인 설계·구축',
     'projects.p1.li1': '주가지표 스크리닝·공시 리스크 태깅·Slack 브리핑을 잇는 무인 자동화 파이프라인 구축',
     'projects.p1.li2': '증분 처리·프롬프트 캐싱으로 LLM 호출 비용 최소화, 외부 AI 에이전트용 MCP 서버 구현',
     'projects.p1.r1': '데이터 수집부터 Slack 알림, 지식 저장까지 100% 무인 자동화 달성',
@@ -39,8 +39,8 @@ var I18N = {
 
     'projects.p3.title': 'DevTicket | 개발자 행사 통합 티켓 커머스',
     'projects.p3.date': '2026.04 – 05',
+    'projects.p3.quote': '초당 370건 트래픽에서 오류율 0%로 검증한 티켓 예매 플랫폼',
     'projects.p3.meta': 'MSA 9개 마이크로서비스 · 박치기공룡 6명 · Backend',
-    'projects.p3.summary': '대규모 트래픽 환경을 고려한 개발자 행사 티켓 커머스 플랫폼 구축, 조회 성능·부하 테스트 파이프라인 전담',
     'projects.p3.li1': '@Cacheable 확장, EventCacheEvictor 직접 구현으로 이벤트 기반 캐시 정합성 보장',
     'projects.p3.li2': 'API Gateway 구간 병목 분석 후 Replica 확장으로 조회 성능 개선',
     'projects.p3.li3': 'k6 기반 부하 테스트 인프라 구축, 370 RPS 검증(Error 0%)',
@@ -50,8 +50,8 @@ var I18N = {
 
     'projects.p4.title': 'BookCommerce | 도서 이커머스 플랫폼',
     'projects.p4.date': '2026.03 – 04',
+    'projects.p4.quote': '팀원 이탈 위기 속 MVP 범위 재조정으로 기한 내 완성한 이커머스',
     'projects.p4.meta': 'MSA 5개 마이크로서비스 · 404 Not Found 3명 · PO 겸 Backend',
-    'projects.p4.summary': '인원 축소(6명에서 3명) 리스크 상황에서 아키텍처 재설계와 핵심 도메인 단독 구현으로 타임라인 내 완성한 이커머스 시스템',
     'projects.p4.li1': '팀원 이탈 상황에서 MVP 범위 재정의, Bounded Context 수립 (PO)',
     'projects.p4.li2': 'RTR(Refresh Token Rotation) 기반 탈취 감지 로직 갖춘 JWT 인증 서버 단독 구현',
     'projects.p4.li3': '헥사고날 아키텍처 처음부터 적용, 장바구니·주문 생성 로직 구축',
@@ -112,8 +112,8 @@ var I18N = {
 
     'projects.p1.title': 'Hermes Knowledge Engine | AI-Driven Personal Knowledge & Data Automation Pipeline',
     'projects.p1.date': 'Jun 2026 – Present',
+    'projects.p1.quote': 'Unattended automation from stock-data collection and risk analysis to AI knowledge storage and Slack alerts',
     'projects.p1.meta': 'Personal project · Planning & Design',
-    'projects.p1.summary': 'Built an unattended automation pipeline chaining stock-data screening, Slack briefings, and an AI knowledge store',
     'projects.p1.li1': 'Built an unattended pipeline chaining stock-indicator screening, disclosure-risk tagging, and Slack briefings',
     'projects.p1.li2': 'Minimized LLM call cost via incremental processing and prompt caching; built an MCP server for external AI agents',
     'projects.p1.r1': 'Achieved fully unattended automation from data collection through Slack alerts to knowledge-store archiving',
@@ -122,8 +122,8 @@ var I18N = {
 
     'projects.p3.title': 'DevTicket | Integrated Ticket Commerce for Developer Events',
     'projects.p3.date': 'Apr–May 2026',
+    'projects.p3.quote': 'A ticket-commerce platform verified at 370 RPS with 0% errors',
     'projects.p3.meta': 'MSA, 9 microservices · Team Headbutting Dinosaur (6) · Backend',
-    'projects.p3.summary': 'Built a ticket-commerce platform for developer events designed for high-traffic conditions; owned query performance and load-testing pipeline',
     'projects.p3.li1': 'Extended @Cacheable and built a custom EventCacheEvictor for event-driven cache consistency',
     'projects.p3.li2': 'Diagnosed an API Gateway bottleneck and scaled replicas to improve query performance',
     'projects.p3.li3': 'Built a k6-based load-testing setup, validating 370 RPS at 0% error',
@@ -133,8 +133,8 @@ var I18N = {
 
     'projects.p4.title': 'BookCommerce | Book E-commerce Platform',
     'projects.p4.date': 'Mar–Apr 2026',
+    'projects.p4.quote': 'An e-commerce platform re-scoped and shipped on time despite losing half the team',
     'projects.p4.meta': 'MSA, 5 microservices · Team 404 Not Found (3) · PO + Backend',
-    'projects.p4.summary': 'Redesigned the architecture and single-handedly built core domains after the team shrank from 6 to 3, still shipping on the original timeline',
     'projects.p4.li1': 'Redefined MVP scope and established bounded contexts after teammates left (as PO)',
     'projects.p4.li2': 'Built a standalone JWT auth server with refresh-token-rotation-based theft detection',
     'projects.p4.li3': 'Applied a hexagonal architecture from scratch, building cart and order-creation logic',
