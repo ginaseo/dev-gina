@@ -3,6 +3,7 @@
 node_modules/
 dist/
 *.tsbuildinfo
+AGENTS.md
 # personal source docs (resume drafts, portfolio PDFs) - never commit
 \#1포트폴리오_서진하_v1.3.3.pdf
 \#2이력서_서진하_v6_초안.md

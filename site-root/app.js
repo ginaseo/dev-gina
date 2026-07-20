@@ -5,9 +5,10 @@
     { id: 'stack', color: 'var(--green)', num: 2 },
     { id: 'projects', color: 'var(--purple)', num: 3 },
     { id: 'careers', color: 'var(--red)', num: 4 },
-    { id: 'education', color: 'var(--gold)', num: 5 },
-    { id: 'certs', color: 'var(--sky)', num: 6 },
-    { id: 'etc', color: 'var(--orange)', num: 7 },
+    { id: 'oss', color: 'var(--teal)', num: 5 },
+    { id: 'education', color: 'var(--gold)', num: 6 },
+    { id: 'certs', color: 'var(--sky)', num: 7 },
+    { id: 'etc', color: 'var(--orange)', num: 8 },
   ];
   var sideNav = document.getElementById('side-nav');
   NAV_ORDER.forEach(function (entry) {
@@ -85,7 +86,7 @@
   var progressFill = document.getElementById('progress-fill');
 
   var revealEls = Array.prototype.slice.call(
-    document.querySelectorAll('.section-body li, .section-body .proj-headline, .section-body p')
+    document.querySelectorAll('.section-body li, .section-body p')
   );
   revealEls.forEach(function (el) { el.setAttribute('data-reveal', ''); });
 

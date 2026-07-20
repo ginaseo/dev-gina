@@ -14,6 +14,7 @@
   --purple: oklch(55% 0.15 300);
   --gold: oklch(56% 0.15 80);
   --sky: oklch(55% 0.10 220);
+  --teal: oklch(55% 0.12 190);
   --progress-track-bg: oklch(92% 0.005 80);
   --filled-line: oklch(30% 0.02 80);
 }
@@ -54,10 +55,10 @@ a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; 
 a::after { content: '↗'; display: inline-block; font-size: 0.75em; margin-left: 1px; text-decoration: none; transform: translateY(-1px); }
 
 header { padding-top: 44px; padding-bottom: 8px; scroll-margin-top: 90px; }
-.hero-center { display: flex; justify-content: center; }
-.hero-row { display: flex; align-items: flex-start; gap: 22px; width: 420px; }
+.hero-center { display: flex; flex-direction: column; align-items: center; }
+.hero-row { display: flex; align-items: center; gap: 22px; width: 420px; }
 .avatar {
-  width: 68px; height: 68px; border-radius: 50%; flex-shrink: 0; overflow: hidden;
+  width: 90px; height: 90px; border-radius: 50%; flex-shrink: 0; overflow: hidden;
   border: 1px solid var(--line);
   background: linear-gradient(135deg, var(--blue), var(--purple));
   display: flex; align-items: center; justify-content: center;
@@ -67,7 +68,7 @@ header { padding-top: 44px; padding-bottom: 8px; scroll-margin-top: 90px; }
 .role { font-size: 15.5px; font-weight: 600; color: var(--sub); margin-top: 6px; line-height: 1.5; }
 .contact { font-size: 12.5px; color: var(--sub); margin-top: 8px; line-height: 1.6; font-variant-numeric: tabular-nums; }
 .contact a { color: var(--sub); }
-.pitch { font-size: 13.5px; line-height: 1.8; margin: 22px auto 0; max-width: 56ch; text-align: center; min-height: 73px; }
+.pitch { font-size: 13.5px; line-height: 1.8; margin: 22px auto 0; max-width: 700px; text-align: center; min-height: 73px; }
 @media (max-width: 719px) {
   .wrap { padding: 0 20px 80px; }
   header { padding-top: 32px; }
@@ -75,6 +76,7 @@ header { padding-top: 44px; padding-bottom: 8px; scroll-margin-top: 90px; }
   .avatar { width: 56px; height: 56px; font-size: 22.4px; }
   .name { font-size: 26px; }
   .role { font-size: 14px; }
+  .entry-head, .edu-row { flex-wrap: wrap; }
 }
 .pitch strong { color: var(--accent); font-weight: 700; }
 
@@ -87,7 +89,6 @@ section { margin-top: 88px; scroll-margin-top: 90px; }
   width: 30px; height: 30px; border-radius: 9px; color: #fff; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; line-height: 1;
 }
-.section-period { margin-left: auto; font-size: 12.5px; color: var(--sub); white-space: nowrap; }
 h2 {
   font-size: 22px; font-weight: 800; letter-spacing: -0.01em; color: var(--ink); margin: 0; line-height: 1.2;
 }
@@ -95,9 +96,14 @@ h3 { font-size: 14px; font-weight: 700; margin: 0; }
 .meta { font-size: 12px; color: var(--sub); margin-top: 2px; }
 .entry { margin-top: 22px; }
 .entry:first-child { margin-top: 0; }
+.entry-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.entry-period { font-size: 12.5px; color: var(--sub); white-space: nowrap; flex-shrink: 0; margin-right: calc(-20px - 10ch); }
 ul { font-size: 13px; line-height: 1.8; margin: 10px 0 0; padding-left: 18px; color: var(--ink); }
 ul.plain { padding-left: 0; list-style: none; margin-top: 0; }
 li + li { margin-top: 4px; }
+.summary { font-size: 13px; line-height: 1.7; color: var(--sub); margin-top: 6px; }
+.subhead { font-size: 11px; font-weight: 700; color: var(--sub); text-transform: uppercase; letter-spacing: .02em; margin-top: 12px; }
+#projects .entry ul { margin-left: 14px; }
 .tech { font-size: 11.5px; color: var(--sub); margin-top: 8px; }
 .tech b { color: var(--sub); font-weight: 700; }
 p { font-size: 13px; line-height: 1.8; margin: 0; }
@@ -117,31 +123,33 @@ p { font-size: 13px; line-height: 1.8; margin: 0; }
 #education > .section-body > ul.plain > li + li { margin-top: 8px; }
 #education li ul { list-style-type: disc; margin-top: 4px; }
 #education li ul li + li { margin-top: 4px; }
-#etc .entry h3 { display: inline; }
-#etc .entry .meta { display: inline; margin-top: 0; margin-left: 8px; }
 #etc .entry ul { margin-top: 6px; }
 #certs h3 { display: inline; font-size: 13px; }
 #certs li + li { margin-top: 8px; }
 
-.stack-table { width: 100%; border-collapse: collapse; font-size: 13px; color: var(--ink); }
-.stack-table th, .stack-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
-.stack-table th { font-size: 11px; font-weight: 700; color: var(--sub); text-transform: uppercase; letter-spacing: .03em; }
-.stack-table td:first-child, .stack-table th:first-child { padding-left: 0; white-space: nowrap; }
-.stack-table td:last-child, .stack-table th:last-child { padding-right: 0; }
-.stack-table tbody tr:last-child td { border-bottom: none; }
-.stack-table td ul { margin: 0; padding-left: 16px; }
-.stack-table td ul li + li { margin-top: 3px; }
+.edu-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.edu-row > div:first-child { min-width: 0; }
+.edu-row .meta { margin-top: 0; white-space: nowrap; flex-shrink: 0; margin-right: calc(-20px - 10ch); }
+
+.label-list { list-style: none; padding-left: 18px; margin: 10px 0 0; font-size: 13px; line-height: 1.8; }
+.label-list li { position: relative; }
+.label-list li + li { margin-top: 6px; }
+.label-list b {
+  position: absolute; right: 100%; margin-right: 14px; white-space: nowrap; text-align: right;
+  color: var(--ink); font-weight: 700;
+}
+@media (max-width: 947px) {
+  .label-list b { position: static; display: inline-block; text-align: left; margin-right: 8px; }
+}
 @media (max-width: 719px) {
-  .stack-table, .stack-table thead, .stack-table tbody, .stack-table th, .stack-table td, .stack-table tr { display: block; }
-  .stack-table thead { display: none; }
-  .stack-table tr { padding: 10px 0; border-bottom: 1px solid var(--line); }
-  .stack-table td { border-bottom: none; padding: 2px 0; }
+  .label-list li { display: block; }
 }
 
 #skills .section-num { background: var(--blue); }
 #stack .section-num { background: var(--green); }
 #projects .section-num { background: var(--purple); }
 #careers .section-num { background: var(--red); }
+#oss .section-num { background: var(--teal); }
 #education .section-num { background: var(--gold); }
 #certs .section-num { background: var(--sky); }
 #etc .section-num { background: var(--orange); }
@@ -209,45 +217,45 @@ p { font-size: 13px; line-height: 1.8; margin: 0; }
   .pr-header h1 { font-size: 52px; font-weight: 800; letter-spacing: -0.02em; margin: 0; line-height: 1.1; }
   .pr-role { font-size: 13pt; margin-top: 6px; }
   .pr-contact { font-size: 11pt; margin-top: 12px; display: flex; gap: 16px; }
-  .pr-summary { font-size: 11.5pt; line-height: 1.5; margin-top: 16px; max-width: 62ch; }
+  .pr-summary { font-size: 11.5pt; line-height: 1.5; margin-top: 16px; }
 
   .pr-section { margin-top: 34px; break-inside: avoid; page-break-inside: avoid; }
-  .pr-section-tight { margin-top: 8px; break-inside: auto; page-break-inside: auto; }
+  .pr-section-flow { break-inside: auto; page-break-inside: auto; }
+  .pr-section-flow h2 { break-after: avoid; page-break-after: avoid; }
+  .pr-section-flow .pr-entry { break-inside: auto; page-break-inside: auto; }
   .pr-section h2 {
     font-size: 22px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 16px;
     padding-bottom: 6px; border-bottom: 1.5px solid oklch(20% 0.01 80);
   }
 
-  .pr-skills { margin: 0; padding-left: 18px; }
-  .pr-skills li { font-size: 11.5pt; line-height: 1.5; margin-top: 10px; }
-  .pr-skills li:first-child { margin-top: 0; }
-  .pr-skills li .meta { font-size: 10pt; margin-top: 3px; }
-
-  .pr-stack, .pr-stack tbody, .pr-stack tr, .pr-stack td { display: block; }
-  .pr-stack { width: 100%; margin: 0; }
-  .pr-stack tr { margin-top: 10px; break-inside: avoid; page-break-inside: avoid; }
-  .pr-stack tr:first-child { margin-top: 0; }
-  .pr-stack td { font-size: 11.5pt; line-height: 1.5; padding: 0; }
-  .pr-stack td:first-child { font-weight: 700; }
-  .pr-stack td:nth-child(2) { font-size: 10.5pt; color: oklch(45% 0.01 80); margin-top: 2px; }
-  .pr-stack td:nth-child(3) ul { list-style-type: disc; padding-left: 16px; margin: 3px 0 0; font-size: 10.5pt; }
-  .pr-stack td:nth-child(3) ul li + li { margin-top: 2px; }
+  .pr-label-list { margin: 0; padding-left: 0; list-style: none; }
+  .pr-label-list li { font-size: 11pt; line-height: 1.5; margin-top: 8px; display: flex; }
+  .pr-label-list li:first-child { margin-top: 0; }
+  .pr-label-list b {
+    display: inline-block; flex-shrink: 0; width: 130px; text-align: right; padding-right: 12px; font-weight: 700;
+  }
 
   .pr-entry { margin-top: 24px; break-inside: avoid; page-break-inside: avoid; }
   .pr-entry:first-child { margin-top: 0; }
   .pr-entry h3 { font-size: 11.5pt; font-weight: 700; margin: 0; }
-  .pr-meta { font-size: 10.5pt; margin-top: 3px; text-align: right; }
-  .pr-entry ul { font-size: 11pt; line-height: 1.5; margin: 9px 0 0; padding-left: 17px; }
-  .pr-entry li + li { margin-top: 5px; }
+  .pr-entry-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .pr-entry-period { font-size: 10.5pt; color: oklch(45% 0.01 80); white-space: nowrap; flex-shrink: 0; }
+  .pr-meta { font-size: 10.5pt; margin-top: 3px; }
+  .pr-entry-summary { font-size: 10pt; line-height: 1.4; margin: 6px 0 0; color: oklch(35% 0.01 80); }
+  .pr-subhead { font-size: 8.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; margin-top: 9px; color: oklch(45% 0.01 80); }
+  .pr-section-flow .pr-entry ul { margin-left: 12px; }
+  .pr-entry ul { font-size: 10.5pt; line-height: 1.4; margin: 6px 0 0; padding-left: 16px; }
+  .pr-entry li + li { margin-top: 4px; }
   .pr-tech { font-size: 10pt; margin-top: 9px; }
-
-  .pr-oss { font-size: 10pt; margin-top: 16px; }
 
   .pr-plain { list-style: none; padding-left: 0; margin: 0; }
   .pr-plain li { font-size: 11pt; line-height: 1.5; }
   .pr-plain > li { margin-top: 11px; }
   .pr-plain > li:first-child { margin-top: 0; }
   .pr-plain h3 { display: inline; font-size: 11.5pt; }
+  .pr-plain .edu-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .pr-plain .edu-row > div:first-child { min-width: 0; }
+  .pr-plain .edu-row .meta { margin: 0; white-space: nowrap; flex-shrink: 0; font-size: 10.5pt; }
   .pr-plain li ul { list-style-type: disc; margin-top: 4px; }
   .pr-plain li ul li + li { margin-top: 4px; }
 
