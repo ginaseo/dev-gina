@@ -26,7 +26,7 @@ export default function Hero({ language, isMobile }: Props) {
             {isEn ? 'Jinha (Gina) Seo' : '서진하'}
           </div>
           <div style={{ fontSize: isMobile ? 14 : 15.5, fontWeight: 600, color: 'var(--sub)', marginTop: 6, lineHeight: 1.5 }}>
-            {isEn ? 'Developer Growing with AI' : 'AI와 함께 성장하는 개발자'}
+            {isEn ? 'Backend Developer | AI-Driven Work Automation' : '백엔드 개발자 | AI를 활용한 업무 자동화'}
           </div>
           <div style={{ fontSize: 12.5, color: 'var(--sub)', marginTop: 8, fontVariantNumeric: 'tabular-nums', letterSpacing: '.03em', lineHeight: 1.6 }}>
             {isEn ? '2009 – Present' : '2009 ~ 현재'}

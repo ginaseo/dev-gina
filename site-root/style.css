@@ -105,8 +105,12 @@ ul.plain { padding-left: 0; list-style: none; margin-top: 0; }
 li + li { margin-top: 4px; }
 .subhead { font-size: 11px; font-weight: 700; color: var(--sub); text-transform: uppercase; letter-spacing: .02em; margin-top: 12px; }
 #projects .entry ul { margin-left: 14px; }
-.tech { font-size: 11.5px; color: var(--sub); margin-top: 8px; }
+#projects .entry li ul, #careers .entry li ul { list-style-type: circle; margin-top: 4px; }
+#projects .entry li ul li + li, #careers .entry li ul li + li { margin-top: 4px; }
+.tech { font-size: 11px; color: var(--sub); margin-top: 8px; }
 .tech b { color: var(--sub); font-weight: 700; }
+.link { font-size: 11px; color: var(--sub); margin-top: 4px; }
+.link b { color: var(--sub); font-weight: 700; }
 p { font-size: 13px; line-height: 1.8; margin: 0; }
 
 [data-reveal] { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
@@ -240,13 +244,16 @@ p { font-size: 13px; line-height: 1.8; margin: 0; }
   .pr-entry h3 { font-size: 11.5pt; font-weight: 700; margin: 0; }
   .pr-entry-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
   .pr-entry-period { font-size: 10.5pt; color: oklch(45% 0.01 80); white-space: nowrap; flex-shrink: 0; }
-  .pr-quote { font-size: 10pt; font-style: italic; color: oklch(45% 0.12 264); margin: 4px 0 0; }
+  .pr-quote { font-size: 10pt; font-style: italic; color: oklch(38% 0.01 80); margin: 4px 0 0; }
   .pr-meta { font-size: 10.5pt; margin-top: 3px; }
   .pr-subhead { font-size: 8.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; margin-top: 9px; color: oklch(45% 0.01 80); }
   .pr-section-flow .pr-entry ul { margin-left: 12px; }
   .pr-entry ul { font-size: 10.5pt; line-height: 1.4; margin: 6px 0 0; padding-left: 16px; }
+  .pr-entry li ul { list-style-type: circle; margin: 3px 0 0; }
+  .pr-entry li ul li + li { margin-top: 3px; }
   .pr-entry li + li { margin-top: 4px; }
   .pr-tech { font-size: 10pt; margin-top: 9px; }
+  .pr-link { font-size: 10pt; margin-top: 3px; }
 
   .pr-plain { list-style: none; padding-left: 0; margin: 0; }
   .pr-plain li { font-size: 11pt; line-height: 1.5; }
