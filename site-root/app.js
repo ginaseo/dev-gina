@@ -38,12 +38,29 @@
   });
 
   var currentLang = 'ko';
+  function wrapPrintMetaLine(el) {
+    if (!el.classList.contains('pr-tech') && !el.classList.contains('pr-link')) return;
+    var label = el.querySelector('b');
+    if (!label || label.nextElementSibling && label.nextElementSibling.className === 'pr-line-content') return;
+
+    var content = document.createElement('span');
+    content.className = 'pr-line-content';
+    while (label.nextSibling) {
+      content.appendChild(label.nextSibling);
+    }
+    if (content.firstChild && content.firstChild.nodeType === Node.TEXT_NODE) {
+      content.firstChild.nodeValue = content.firstChild.nodeValue.replace(/^\s+/, '');
+    }
+    el.appendChild(content);
+  }
+
   function applyLang(lang) {
     currentLang = lang;
     localStorage.setItem('lang', lang);
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
       el.innerHTML = I18N[lang][key] || '';
+      wrapPrintMetaLine(el);
     });
     sideNav.querySelectorAll('button').forEach(function (btn) {
       var key = btn.getAttribute('data-i18n-nav');

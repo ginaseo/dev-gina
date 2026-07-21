@@ -258,8 +258,27 @@ p { font-size: 13px; line-height: 1.8; margin: 0; }
   .pr-entry li ul { list-style-type: circle; margin: 3px 0 0; }
   .pr-entry li ul li + li { margin-top: 3px; }
   .pr-entry li + li { margin-top: 4px; }
-  .pr-tech { font-size: 10pt; margin-top: 9px; }
-  .pr-link { font-size: 10pt; margin-top: 3px; }
+  .pr-tech,
+  .pr-link {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    column-gap: 8px;
+    align-items: baseline;
+    font-size: 10pt;
+  }
+  .pr-tech { margin-top: 9px; }
+  .pr-link { margin-top: 3px; }
+  .pr-tech b,
+  .pr-link b {
+    text-align: right;
+  }
+  .pr-line-content {
+    min-width: 0;
+    text-align: left;
+  }
+  /* p1 Tech is 6px over one line, leaving a lone item ("CodeRabbit") on
+     line 2 — nudge it down to 9.5pt so it fits a single line. */
+  .pr-tech[data-i18n="projects.p1.tech"] { font-size: 9.5pt; }
 
   .pr-plain { list-style: none; padding-left: 0; margin: 0; }
   .pr-plain li { font-size: 11pt; line-height: 1.5; }

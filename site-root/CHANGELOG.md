@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## 2026-07-22 — 출력 이력서 학력/Tech 정렬 보정
+
+- 명지전문대학 학력 설명에 BCIT 연계 복수 디플로마를 추가.
+  - `정보통신과 (3년제) · BCIT 연계 복수 디플로마: Diploma of Technology, Computer Systems Technology`
+  - 영문도 `Dual diploma with BCIT: Diploma of Technology, Computer Systems Technology`로 동기화.
+- 출력 전용 이력서의 `Tech`/`Link` 행을 라벨 칸과 본문 칸으로 분리.
+  - `Tech`, `Link` 라벨만 오른쪽 정렬.
+  - 본문은 왼쪽 정렬되어 줄바꿈 시 `Java`와 `Docker` 시작 위치가 같은 칸에 맞도록 조정.
+
+---
+
 ## 2026-07-20 — 기술스택 재배치 · AI/Search 항목 실증 교체
 
 ### 배치 순서 (stack.li1-9)
