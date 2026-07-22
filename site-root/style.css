@@ -107,10 +107,15 @@ li + li { margin-top: 4px; }
 #projects .entry ul { margin-left: 14px; }
 #projects .entry li ul, #careers .entry li ul { list-style-type: circle; margin-top: 4px; }
 #projects .entry li ul li + li, #careers .entry li ul li + li { margin-top: 4px; }
-.tech { font-size: 11px; color: var(--sub); margin-top: 8px; }
-.tech b { color: var(--sub); font-weight: 700; }
-.link { font-size: 11px; color: var(--sub); margin-top: 4px; }
-.link b { color: var(--sub); font-weight: 700; }
+.tech,
+.link {
+  display: grid; grid-template-columns: 30px 1fr; column-gap: 8px; align-items: baseline;
+  font-size: 11px; color: var(--sub);
+}
+.tech { margin-top: 8px; }
+.link { margin-top: 4px; }
+.tech b, .link b { color: var(--sub); font-weight: 700; text-align: right; }
+.line-content { min-width: 0; text-align: left; }
 p { font-size: 13px; line-height: 1.8; margin: 0; }
 
 [data-reveal] { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }

@@ -39,12 +39,15 @@
 
   var currentLang = 'ko';
   function wrapPrintMetaLine(el) {
-    if (!el.classList.contains('pr-tech') && !el.classList.contains('pr-link')) return;
+    var isPrint = el.classList.contains('pr-tech') || el.classList.contains('pr-link');
+    var isScreen = el.classList.contains('tech') || el.classList.contains('link');
+    if (!isPrint && !isScreen) return;
+    var wrapperClass = isPrint ? 'pr-line-content' : 'line-content';
     var label = el.querySelector('b');
-    if (!label || label.nextElementSibling && label.nextElementSibling.className === 'pr-line-content') return;
+    if (!label || label.nextElementSibling && label.nextElementSibling.className === wrapperClass) return;
 
     var content = document.createElement('span');
-    content.className = 'pr-line-content';
+    content.className = wrapperClass;
     while (label.nextSibling) {
       content.appendChild(label.nextSibling);
     }
