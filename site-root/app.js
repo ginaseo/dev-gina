@@ -37,6 +37,32 @@
     sideNav.appendChild(btn);
   });
 
+  var VARIANTS = ['master', 'backend', 'ai'];
+  var DEFAULT_VARIANT = 'master';
+
+  var PROJECT_META = {
+    p1: { bullets: ['li1', 'li2'] },
+    p3: { bullets: ['li1', 'li2'] },
+    p4: { bullets: ['li1', 'li2', 'li3'] },
+  };
+
+  var PROJECT_ORDER = {
+    master:  ['p1', 'p3', 'p4'],
+    backend: ['p3', 'p4', 'p1'],
+    ai:      ['p1', 'p3', 'p4'],
+  };
+
+  var SKILLS_ORDER = {
+    master:  ['li1', 'li2', 'li3', 'li4'],
+    backend: ['li1', 'li2', 'li4', 'li3'],
+    ai:      ['li3', 'li1', 'li2', 'li4'],
+  };
+
+  function getVariant() {
+    var v = new URLSearchParams(window.location.search).get('v');
+    return VARIANTS.indexOf(v) !== -1 ? v : DEFAULT_VARIANT;
+  }
+
   var currentLang = 'ko';
   function wrapPrintMetaLine(el) {
     var isPrint = el.classList.contains('pr-tech') || el.classList.contains('pr-link');
