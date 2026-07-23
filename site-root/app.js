@@ -37,31 +37,24 @@
     sideNav.appendChild(btn);
   });
 
-  var VARIANTS = ['master', 'backend', 'ai'];
   var DEFAULT_VARIANT = 'master';
 
-  // Every id used in PROJECT_ORDER/SKILLS_ORDER below must have a matching entry here (renderResume throws otherwise).
+  // Every id used in VARIANT_CONFIG[*].projects below must have a matching entry here (renderResume throws otherwise).
   var PROJECT_META = {
     p1: { bullets: ['li1', 'li2'] },
     p3: { bullets: ['li1', 'li2'] },
     p4: { bullets: ['li1', 'li2', 'li3'] },
   };
 
-  var PROJECT_ORDER = {
-    master:  ['p1', 'p3', 'p4'],
-    backend: ['p3', 'p4', 'p1'],
-    ai:      ['p1', 'p3', 'p4'],
-  };
-
-  var SKILLS_ORDER = {
-    master:  ['li1', 'li2', 'li3', 'li4'],
-    backend: ['li1', 'li2', 'li4', 'li3'],
-    ai:      ['li3', 'li1', 'li2', 'li4'],
+  var VARIANT_CONFIG = {
+    master:  { projects: ['p1', 'p3', 'p4'], skills: ['li1', 'li2', 'li3', 'li4'] },
+    backend: { projects: ['p3', 'p4', 'p1'], skills: ['li1', 'li2', 'li4', 'li3'] },
+    ai:      { projects: ['p1', 'p3', 'p4'], skills: ['li3', 'li1', 'li2', 'li4'] },
   };
 
   function getVariant() {
     var v = new URLSearchParams(window.location.search).get('v');
-    return VARIANTS.indexOf(v) !== -1 ? v : DEFAULT_VARIANT;
+    return Object.prototype.hasOwnProperty.call(VARIANT_CONFIG, v) ? v : DEFAULT_VARIANT;
   }
 
   var variant = getVariant();
@@ -101,8 +94,8 @@
   }
 
   function renderResume() {
-    var projectIds = PROJECT_ORDER[variant];
-    var skillIds = SKILLS_ORDER[variant];
+    var projectIds = VARIANT_CONFIG[variant].projects;
+    var skillIds = VARIANT_CONFIG[variant].skills;
 
     var screenProjects = document.getElementById('projects-list');
     var printProjects = document.getElementById('print-projects');
