@@ -64,6 +64,8 @@
     return VARIANTS.indexOf(v) !== -1 ? v : DEFAULT_VARIANT;
   }
 
+  var variant = getVariant();
+
   function dEl(tag, cls, i18nKey) {
     var el = document.createElement(tag);
     if (cls) el.className = cls;
@@ -99,7 +101,6 @@
   }
 
   function renderResume() {
-    var variant = getVariant();
     var projectIds = PROJECT_ORDER[variant];
     var skillIds = SKILLS_ORDER[variant];
 
@@ -155,12 +156,23 @@
     el.appendChild(content);
   }
 
+  function getText(lang, key) {
+    var overrideKey = key + '__' + variant;
+    var text = I18N[lang][overrideKey];
+    if (text === undefined) text = I18N[lang][key];
+    if (text === undefined) {
+      console.warn('i18n: missing key "' + key + '" (variant "' + variant + '", lang "' + lang + '")');
+      text = '';
+    }
+    return text;
+  }
+
   function applyLang(lang) {
     currentLang = lang;
     localStorage.setItem('lang', lang);
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
-      el.innerHTML = I18N[lang][key] || '';
+      el.innerHTML = getText(lang, key);
       wrapPrintMetaLine(el);
     });
     sideNav.querySelectorAll('button').forEach(function (btn) {
