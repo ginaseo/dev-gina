@@ -63,6 +63,40 @@
     return VARIANTS.indexOf(v) !== -1 ? v : DEFAULT_VARIANT;
   }
 
+  function dEl(tag, cls, i18nKey) {
+    var el = document.createElement(tag);
+    if (cls) el.className = cls;
+    if (i18nKey) el.setAttribute('data-i18n', i18nKey);
+    return el;
+  }
+
+  function renderProjectEntry(id, mode) {
+    var isPrint = mode === 'print';
+    var wrap = dEl('div', isPrint ? 'pr-entry' : 'entry');
+
+    var head = dEl('div', isPrint ? 'pr-entry-head' : 'entry-head');
+    head.appendChild(dEl('h3', null, 'projects.' + id + '.title'));
+    head.appendChild(dEl('span', isPrint ? 'pr-entry-period' : 'entry-period', 'projects.' + id + '.date'));
+    wrap.appendChild(head);
+
+    wrap.appendChild(dEl('div', isPrint ? 'pr-meta' : 'meta', 'projects.' + id + '.meta'));
+    wrap.appendChild(dEl('p', isPrint ? 'pr-quote' : 'quote', 'projects.' + id + '.quote'));
+
+    var ul = document.createElement('ul');
+    PROJECT_META[id].bullets.forEach(function (bulletKey) {
+      ul.appendChild(dEl('li', null, 'projects.' + id + '.' + bulletKey));
+    });
+    wrap.appendChild(ul);
+
+    wrap.appendChild(dEl('div', isPrint ? 'pr-tech' : 'tech', 'projects.' + id + '.tech'));
+    wrap.appendChild(dEl('div', isPrint ? 'pr-link' : 'link', 'projects.' + id + '.link'));
+    return wrap;
+  }
+
+  function renderSkillLi(id, mode) {
+    return dEl('li', null, 'skills.' + id);
+  }
+
   var currentLang = 'ko';
   function wrapPrintMetaLine(el) {
     var isPrint = el.classList.contains('pr-tech') || el.classList.contains('pr-link');
