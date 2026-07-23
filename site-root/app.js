@@ -40,6 +40,7 @@
   var VARIANTS = ['master', 'backend', 'ai'];
   var DEFAULT_VARIANT = 'master';
 
+  // Every id used in PROJECT_ORDER/SKILLS_ORDER below must have a matching entry here (renderResume throws otherwise).
   var PROJECT_META = {
     p1: { bullets: ['li1', 'li2'] },
     p3: { bullets: ['li1', 'li2'] },
@@ -172,7 +173,7 @@
   }
   document.getElementById('lang-ko').addEventListener('click', function () { applyLang('ko'); });
   document.getElementById('lang-en').addEventListener('click', function () { applyLang('en'); });
-  renderResume();
+  renderResume(); // must run before applyLang() so the generated data-i18n nodes get filled with text
   applyLang(localStorage.getItem('lang') === 'en' ? 'en' : 'ko');
 
   var root = document.documentElement;
