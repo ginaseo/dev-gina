@@ -49,10 +49,13 @@
   var VARIANT_CONFIG = {
     master:  { projects: ['p1', 'p3', 'p4'], skills: ['li1', 'li2', 'li3', 'li4'] },
     backend: { projects: ['p3', 'p4', 'p1'], skills: ['li1', 'li2', 'li4', 'li3'] },
-    ai:      { projects: ['p1', 'p3', 'p4'], skills: ['li3', 'li1', 'li2', 'li4'] },
+    ai:      { projects: ['p1', 'p3', 'p4'], skills: ['li1', 'li2', 'li3', 'li4'] },
   };
 
   function getVariant() {
+    var path = window.location.pathname;
+    if (/\/backend\/?$/.test(path)) return 'backend';
+    if (/\/ai\/?$/.test(path)) return 'ai';
     var v = new URLSearchParams(window.location.search).get('v');
     return Object.prototype.hasOwnProperty.call(VARIANT_CONFIG, v) ? v : DEFAULT_VARIANT;
   }
@@ -91,6 +94,20 @@
 
   function renderSkillLi(id, mode) {
     return dEl('li', null, 'skills.' + id);
+  }
+
+  var HIDDEN_NAV_TARGETS = {
+    master:  ['/dev-gina/backend/', '/dev-gina/ai/'],
+    backend: ['/dev-gina/', '/dev-gina/ai/'],
+    ai:      ['/dev-gina/backend/', '/dev-gina/'],
+  };
+
+  function setupHiddenNav() {
+    var targets = HIDDEN_NAV_TARGETS[variant];
+    var zone0 = document.getElementById('hidden-nav-0');
+    var zone1 = document.getElementById('hidden-nav-1');
+    if (zone0) zone0.href = targets[0];
+    if (zone1) zone1.href = targets[1];
   }
 
   function renderResume() {
@@ -179,6 +196,7 @@
   document.getElementById('lang-ko').addEventListener('click', function () { applyLang('ko'); });
   document.getElementById('lang-en').addEventListener('click', function () { applyLang('en'); });
   renderResume(); // must run before applyLang() so the generated data-i18n nodes get filled with text
+  setupHiddenNav();
   applyLang(localStorage.getItem('lang') === 'en' ? 'en' : 'ko');
 
   var root = document.documentElement;
