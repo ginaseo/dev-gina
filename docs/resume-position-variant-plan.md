@@ -8,7 +8,7 @@
 
 **Tech Stack:** Plain JS (ES5-style, no build step), matches `site-root/app.js`'s existing conventions (`var`, `function`, string concatenation, no template literals, no framework).
 
-**Reference:** Design spec at `docs/superpowers/specs/2026-07-22-resume-position-variant-design.md`.
+**Reference:** Design spec at `docs/resume-position-variant-design.md`.
 
 ## Global Constraints
 

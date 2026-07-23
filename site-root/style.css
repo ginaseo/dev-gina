@@ -212,6 +212,16 @@ p { font-size: 13px; line-height: 1.8; margin: 0; }
 @media print {
   @page { size: A4; margin: 18mm; }
 
+  /* Print must always look like the light theme, regardless of dark mode
+     (data-theme="dark" or OS prefers-color-scheme) — these selectors match
+     the theme-toggle rules' specificity so this wins by source order. */
+  :root,
+  :root[data-theme="dark"],
+  :root[data-theme="light"] {
+    --bg: #fff; --ink: oklch(20% 0.01 80); --sub: oklch(45% 0.01 80); --line: oklch(90% 0.005 80);
+    --card-bg: #fff;
+  }
+
   #progress-track, #page-shell { display: none !important; }
 
   #print-resume {
