@@ -37,6 +37,104 @@
     sideNav.appendChild(btn);
   });
 
+  var VARIANTS = ['master', 'backend', 'ai'];
+  var DEFAULT_VARIANT = 'master';
+
+  // Every id used in PROJECT_ORDER/SKILLS_ORDER below must have a matching entry here (renderResume throws otherwise).
+  var PROJECT_META = {
+    p1: { bullets: ['li1', 'li2'] },
+    p3: { bullets: ['li1', 'li2'] },
+    p4: { bullets: ['li1', 'li2', 'li3'] },
+  };
+
+  var PROJECT_ORDER = {
+    master:  ['p1', 'p3', 'p4'],
+    backend: ['p3', 'p4', 'p1'],
+    ai:      ['p1', 'p3', 'p4'],
+  };
+
+  var SKILLS_ORDER = {
+    master:  ['li1', 'li2', 'li3', 'li4'],
+    backend: ['li1', 'li2', 'li4', 'li3'],
+    ai:      ['li3', 'li1', 'li2', 'li4'],
+  };
+
+  function getVariant() {
+    var v = new URLSearchParams(window.location.search).get('v');
+    return VARIANTS.indexOf(v) !== -1 ? v : DEFAULT_VARIANT;
+  }
+
+  function dEl(tag, cls, i18nKey) {
+    var el = document.createElement(tag);
+    if (cls) el.className = cls;
+    if (i18nKey) el.setAttribute('data-i18n', i18nKey);
+    return el;
+  }
+
+  function renderProjectEntry(id, mode) {
+    var isPrint = mode === 'print';
+    var wrap = dEl('div', isPrint ? 'pr-entry' : 'entry');
+
+    var head = dEl('div', isPrint ? 'pr-entry-head' : 'entry-head');
+    head.appendChild(dEl('h3', null, 'projects.' + id + '.title'));
+    head.appendChild(dEl('span', isPrint ? 'pr-entry-period' : 'entry-period', 'projects.' + id + '.date'));
+    wrap.appendChild(head);
+
+    wrap.appendChild(dEl('div', isPrint ? 'pr-meta' : 'meta', 'projects.' + id + '.meta'));
+    wrap.appendChild(dEl('p', isPrint ? 'pr-quote' : 'quote', 'projects.' + id + '.quote'));
+
+    var ul = document.createElement('ul');
+    PROJECT_META[id].bullets.forEach(function (bulletKey) {
+      ul.appendChild(dEl('li', null, 'projects.' + id + '.' + bulletKey));
+    });
+    wrap.appendChild(ul);
+
+    wrap.appendChild(dEl('div', isPrint ? 'pr-tech' : 'tech', 'projects.' + id + '.tech'));
+    wrap.appendChild(dEl('div', isPrint ? 'pr-link' : 'link', 'projects.' + id + '.link'));
+    return wrap;
+  }
+
+  function renderSkillLi(id, mode) {
+    return dEl('li', null, 'skills.' + id);
+  }
+
+  function renderResume() {
+    var variant = getVariant();
+    var projectIds = PROJECT_ORDER[variant];
+    var skillIds = SKILLS_ORDER[variant];
+
+    var screenProjects = document.getElementById('projects-list');
+    var printProjects = document.getElementById('print-projects');
+    projectIds.forEach(function (id) {
+      screenProjects.appendChild(renderProjectEntry(id, 'screen'));
+      printProjects.appendChild(renderProjectEntry(id, 'print'));
+    });
+
+    var screenSkills = document.getElementById('skills-list');
+    var printSkills = document.getElementById('pr-skills-list');
+    skillIds.forEach(function (id) {
+      screenSkills.appendChild(renderSkillLi(id, 'screen'));
+      printSkills.appendChild(renderSkillLi(id, 'print'));
+    });
+
+    console.assert(
+      screenProjects.children.length === projectIds.length,
+      'renderResume: screen project count mismatch for variant', variant
+    );
+    console.assert(
+      printProjects.children.length === projectIds.length + 1, // +1 for the <h2>
+      'renderResume: print project count mismatch for variant', variant
+    );
+    console.assert(
+      screenSkills.children.length === skillIds.length,
+      'renderResume: screen skills count mismatch for variant', variant
+    );
+    console.assert(
+      printSkills.children.length === skillIds.length,
+      'renderResume: print skills count mismatch for variant', variant
+    );
+  }
+
   var currentLang = 'ko';
   function wrapPrintMetaLine(el) {
     var isPrint = el.classList.contains('pr-tech') || el.classList.contains('pr-link');
@@ -75,6 +173,7 @@
   }
   document.getElementById('lang-ko').addEventListener('click', function () { applyLang('ko'); });
   document.getElementById('lang-en').addEventListener('click', function () { applyLang('en'); });
+  renderResume(); // must run before applyLang() so the generated data-i18n nodes get filled with text
   applyLang(localStorage.getItem('lang') === 'en' ? 'en' : 'ko');
 
   var root = document.documentElement;

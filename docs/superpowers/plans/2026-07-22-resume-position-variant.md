@@ -351,7 +351,7 @@ Array.from(document.querySelectorAll('#projects-list h3')).map(function (h) { re
 Expected: `["projects.p1.title", "projects.p3.title", "projects.p4.title"]` (master order).
 
 ```js
-document.querySelectorAll('#projects-list .entry li').length
+document.querySelectorAll('#projects-list .entry > ul > li').length
 ```
 Expected: `7` (p1: 2 + p3: 2 + p4: 3).
 
