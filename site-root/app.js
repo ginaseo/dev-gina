@@ -97,6 +97,43 @@
     return dEl('li', null, 'skills.' + id);
   }
 
+  function renderResume() {
+    var variant = getVariant();
+    var projectIds = PROJECT_ORDER[variant];
+    var skillIds = SKILLS_ORDER[variant];
+
+    var screenProjects = document.getElementById('projects-list');
+    var printProjects = document.getElementById('print-projects');
+    projectIds.forEach(function (id) {
+      screenProjects.appendChild(renderProjectEntry(id, 'screen'));
+      printProjects.appendChild(renderProjectEntry(id, 'print'));
+    });
+
+    var screenSkills = document.getElementById('skills-list');
+    var printSkills = document.getElementById('pr-skills-list');
+    skillIds.forEach(function (id) {
+      screenSkills.appendChild(renderSkillLi(id, 'screen'));
+      printSkills.appendChild(renderSkillLi(id, 'print'));
+    });
+
+    console.assert(
+      screenProjects.children.length === projectIds.length,
+      'renderResume: screen project count mismatch for variant', variant
+    );
+    console.assert(
+      printProjects.children.length === projectIds.length + 1, // +1 for the <h2>
+      'renderResume: print project count mismatch for variant', variant
+    );
+    console.assert(
+      screenSkills.children.length === skillIds.length,
+      'renderResume: screen skills count mismatch for variant', variant
+    );
+    console.assert(
+      printSkills.children.length === skillIds.length,
+      'renderResume: print skills count mismatch for variant', variant
+    );
+  }
+
   var currentLang = 'ko';
   function wrapPrintMetaLine(el) {
     var isPrint = el.classList.contains('pr-tech') || el.classList.contains('pr-link');
@@ -135,6 +172,7 @@
   }
   document.getElementById('lang-ko').addEventListener('click', function () { applyLang('ko'); });
   document.getElementById('lang-en').addEventListener('click', function () { applyLang('en'); });
+  renderResume();
   applyLang(localStorage.getItem('lang') === 'en' ? 'en' : 'ko');
 
   var root = document.documentElement;
