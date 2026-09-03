@@ -72,10 +72,10 @@ header { padding-top: 44px; padding-bottom: 8px; scroll-margin-top: 90px; }
 @media screen and (max-width: 719px) {
   .wrap { padding: 0 20px 80px; }
   header { padding-top: 32px; }
-  .hero-row { width: 100%; }
+  .hero-row { width: 100%; min-width: 0; }
   .avatar { width: 56px; height: 56px; font-size: 22.4px; }
   .name { font-size: 26px; }
-  .role { font-size: 14px; }
+  .role { font-size: 14px; white-space: normal; }
   .entry-head, .edu-row { flex-wrap: wrap; }
   .entry-period, .edu-row .meta { margin-right: 0; flex-basis: 100%; white-space: normal; }
 }

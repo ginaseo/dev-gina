@@ -54,8 +54,8 @@
 
   function getVariant() {
     var path = window.location.pathname;
-    if (/\/backend\/?$/.test(path)) return 'backend';
-    if (/\/ai\/?$/.test(path)) return 'ai';
+    if (/\/backend(\/(index\.html)?)?$/.test(path)) return 'backend';
+    if (/\/ai(\/(index\.html)?)?$/.test(path)) return 'ai';
     var v = new URLSearchParams(window.location.search).get('v');
     return Object.prototype.hasOwnProperty.call(VARIANT_CONFIG, v) ? v : DEFAULT_VARIANT;
   }
