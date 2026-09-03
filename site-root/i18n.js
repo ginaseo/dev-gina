@@ -34,9 +34,9 @@ var I18N = {
     'stack.li4': '<b>AI</b> LLM API · MCP · Claude Code · Codex · CodeRabbit',
 
     'projects.p1.title': 'Hermes Knowledge Engine · KRX Brief | 개인 지식·데이터 자동화',
-    'projects.p1.date': '2026.06 – 진행중',
+    'projects.p1.date': '2026.06 – 07',
     'projects.p1.quote': '대화·시장 데이터를 사람 개입 없이 수집·요약·저장하는 무인 자동화 파이프라인',
-    'projects.p1.meta': '개인 프로젝트 (기획·설계)',
+    'projects.p1.meta': '개인 프로젝트',
     'projects.p1.li1': '개인 지식 자동화 파이프라인 (Hermes) 구현<ul><li>Slack·Claude Code 세션 수집 후 LLM으로 요약·연결해 Obsidian 지식베이스 자동 구축</li><li>증분 처리 + LLM 응답 캐싱으로 API 호출 비용 최소화</li><li>외부 AI 에이전트가 지식베이스를 실시간 조회하는 MCP 서버 구현</li></ul>',
     'projects.p1.li2': '주식 모닝 브리핑 자동화 파이프라인 (KRX Brief) 구현<ul><li>KRX·OpenDART API 직접 호출로 데이터 수집, 코스피200 다중 팩터 스크리너 생성</li><li>매 영업일 수집 → 요약 → 저장 → 브리핑 전 과정 무인 운영</li></ul>',
     'projects.p1.li3': '증분 처리·LLM 응답 캐싱으로 호출 비용 최소화, 산출물 재현성 확보',
@@ -126,7 +126,7 @@ var I18N = {
     'stack.li4': '<b>AI</b> LLM API · MCP · Claude Code · Codex · CodeRabbit',
 
     'projects.p1.title': 'Hermes Knowledge Engine · KRX Brief | Personal Knowledge & Data Automation',
-    'projects.p1.date': 'Jun 2026 – Present',
+    'projects.p1.date': 'Jun–Jul 2026',
     'projects.p1.quote': 'An unattended pipeline that collects, summarizes, and stores conversations and market data without human input',
     'projects.p1.meta': 'Personal project (planning and design)',
     'projects.p1.li1': 'Built a personal knowledge automation pipeline (Hermes)<ul><li>Collects Slack and Claude Code sessions, then summarizes and links them via LLM to auto-build an Obsidian knowledge base</li><li>Minimized API call cost with incremental processing and LLM response caching</li><li>Implemented an MCP server for external AI agents to query the knowledge base in real time</li></ul>',
