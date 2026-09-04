@@ -5,10 +5,10 @@
     { id: 'stack', color: 'var(--green)', num: 2 },
     { id: 'projects', color: 'var(--purple)', num: 3 },
     { id: 'careers', color: 'var(--red)', num: 4 },
-    { id: 'oss', color: 'var(--teal)', num: 5 },
-    { id: 'education', color: 'var(--gold)', num: 6 },
-    { id: 'certs', color: 'var(--sky)', num: 7 },
-    { id: 'etc', color: 'var(--orange)', num: 8 },
+    { id: 'etc', color: 'var(--orange)', num: 5 },
+    { id: 'oss', color: 'var(--teal)', num: 6 },
+    { id: 'education', color: 'var(--gold)', num: 7 },
+    { id: 'certs', color: 'var(--sky)', num: 8 },
   ];
   var sideNav = document.getElementById('side-nav');
   NAV_ORDER.forEach(function (entry) {
