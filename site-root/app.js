@@ -47,9 +47,9 @@
   };
 
   var VARIANT_CONFIG = {
-    master:  { projects: ['p1', 'p3', 'p4'], skills: ['li1', 'li2', 'li3', 'li4'] },
-    backend: { projects: ['p3', 'p4', 'p1'], skills: ['li1', 'li2', 'li4', 'li3'] },
-    ai:      { projects: ['p1', 'p3', 'p4'], skills: ['li1', 'li2', 'li3', 'li4'] },
+    master:  { projects: ['p1', 'p3', 'p4'], skills: ['li1', 'li2', 'li3'], skillsNote: true },
+    backend: { projects: ['p3', 'p4', 'p1'], skills: ['li1', 'li2'], skillsNote: true },
+    ai:      { projects: ['p1', 'p3', 'p4'], skills: ['li3', 'li2'] },
   };
 
   function getVariant() {
@@ -127,6 +127,11 @@
       screenSkills.appendChild(renderSkillLi(id, 'screen'));
       printSkills.appendChild(renderSkillLi(id, 'print'));
     });
+
+    if (VARIANT_CONFIG[variant].skillsNote) {
+      document.getElementById('skills-note').hidden = false;
+      document.getElementById('pr-skills-note').hidden = false;
+    }
 
     console.assert(
       screenProjects.children.length === projectIds.length,
