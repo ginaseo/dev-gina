@@ -147,6 +147,7 @@ p { font-size: 13px; line-height: 1.8; margin: 0; }
   position: absolute; right: 100%; margin-right: 14px; white-space: nowrap; text-align: right;
   color: var(--ink); font-weight: 700;
 }
+.label-list.note-list { margin-top: 6px; }
 @media (max-width: 947px) {
   .label-list b { position: static; display: inline-block; text-align: left; margin-right: 8px; }
 }
