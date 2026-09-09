@@ -263,7 +263,7 @@ p { font-size: 13px; line-height: 1.8; margin: 0; }
   .pr-label-list li { font-size: 11pt; line-height: 1.5; margin-top: 8px; display: flex; }
   .pr-label-list li:first-child { margin-top: 0; }
   .pr-label-list b {
-    display: inline-block; flex-shrink: 0; width: 130px; text-align: right; padding-right: 12px; font-weight: 700;
+    display: inline-block; flex-shrink: 0; width: 180px; text-align: right; padding-right: 10px; font-weight: 700;
   }
 
   /* Entries flow across page boundaries so a tall entry fills the current
