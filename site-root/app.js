@@ -48,7 +48,7 @@
 
   var VARIANT_CONFIG = {
     master:  { projects: ['p3', 'p4', 'p1'], skills: ['li1', 'li2', 'li3', 'li4'] },
-    backend: { projects: ['p3', 'p4', 'p1'], skills: ['li1', 'li2', 'li3'] },
+    backend: { projects: ['p3', 'p4', 'p1'], skills: ['li1', 'li2', 'li3', 'li4'] },
     ai:      { projects: ['p1', 'p3', 'p4'], skills: ['li3', 'li2'] },
   };
 
