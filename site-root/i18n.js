@@ -80,7 +80,7 @@ var I18N = {
 
     'careers.c1.title': '리얼인벤션 | Backend Developer',
     'careers.c1.date': '2022.05 – 2023.09',
-    'careers.c1.meta': '전자정부프레임워크 기반 공공·연구기관 웹 시스템 신규 구축·운영, 재직 중 총 8개 시스템 담당',
+    'careers.c1.meta': '전자정부프레임워크 기반 공공·연구기관 웹 시스템 8개 구축·운영',
     'careers.c1.li1': '연구기관 신규 웹 시스템 백엔드 구축<ul><li>회원관리·자료실 등 7개 모듈 구현 (통계 그래프, 엑셀 다운로드, 공통코드 표준화)</li><li>ERD·테이블 정의서·프로그램 명세서 등 설계 산출물 작성</li></ul>',
     'careers.c1.li2': '운영 시스템 유지보수·기능 개선<ul><li>정부 공개 포털·관리자 시스템 등 8개 시스템 운영</li><li>보안성 검토 지적 취약점 수정 후 운영 반영</li></ul>',
     'careers.c1.li3': '공통 검색 기능 컴포넌트화<ul><li>2개 시스템에 적용, 중복 코드 제거 및 유지보수 일관성 확보</li></ul>',
@@ -183,7 +183,7 @@ var I18N = {
 
     'careers.c1.title': 'RealInvention | Backend Developer',
     'careers.c1.date': 'May 2022 – Sep 2023',
-    'careers.c1.meta': 'Newly built and operated eGovFrame-based public/research-institute web systems — 8 systems total during tenure',
+    'careers.c1.meta': 'Built and operated 8 eGovFrame-based public/research-institute web systems',
     'careers.c1.li1': 'Built the backend of a new research-institute web system<ul><li>Built 7 modules including member management and a resource archive (statistics graphs, Excel export, common-code standardization)</li><li>Authored design deliverables — ERDs, table definitions, and program specs</li></ul>',
     'careers.c1.li2': 'Maintained and improved operational systems<ul><li>Operated 8 systems in total, including public government portals and admin consoles</li><li>Fixed vulnerabilities flagged by security reviews and deployed the fixes</li></ul>',
     'careers.c1.li3': 'Componentized the shared search feature<ul><li>Applied it across 2 systems, removing duplicate code and securing maintenance consistency</li></ul>',
