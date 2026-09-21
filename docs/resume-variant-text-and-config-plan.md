@@ -141,7 +141,7 @@ to (append the 6 new keys directly after `skills.li4`, keep the 4 existing lines
     'header.tagline__ai': '백엔드 개발자 | LLM·에이전트 기반 자동화 파이프라인 설계',
     'header.pitch__backend': '복잡한 트래픽·이벤트 흐름을 <strong>안정적으로 설계하고 검증</strong>하는 데 집중합니다.<br>문서화와 진행 상황 공유를 습관처럼 실천하며, <strong>함께 일하기 편한 개발 환경</strong>을 지향합니다.',
     'header.pitch__ai': 'LLM·MCP 기반 <strong>에이전트와 자동화 파이프라인 구축</strong>에 관심이 많습니다.<br>문서화와 진행 상황 공유를 습관처럼 실천하며, <strong>함께 일하기 편한 개발 환경</strong>을 지향합니다.',
-    'skills.li3__backend': '<b>AI 활용 자동화</b> LLM·MCP로 반복 업무 자동화, 백엔드 개발 생산성 향상',
+    'skills.li3__backend': '<b>AI 활용 수정</b> LLM·MCP로 반복 업무 자동화, 백엔드 개발 생산성 향상',
     'skills.li3__ai': '<b>AI Agent Engineering</b> LLM·MCP 기반 에이전트 설계, 자동화 파이프라인 구축·운영, 지식 통합',
 ```
 
@@ -188,7 +188,7 @@ Expected: `"백엔드 개발자 | 대규모 트래픽·이벤트 기반 시스�
 ```js
 getText('ko', 'skills.li3')
 ```
-Expected: `"<b>AI 활용 자동화</b> LLM·MCP로 반복 업무 자동화, 백엔드 개발 생산성 향상"`.
+Expected: `"<b>AI 활용 수정</b> LLM·MCP로 반복 업무 자동화, 백엔드 개발 생산성 향상"`.
 
 Reload with `?v=ai`, repeat:
 ```js

@@ -42,13 +42,13 @@
   // Every id used in VARIANT_CONFIG[*].projects below must have a matching entry here (renderResume throws otherwise).
   var PROJECT_META = {
     p1: { bullets: ['li1', 'li2'] },
-    p3: { bullets: ['li1', 'li2'] },
-    p4: { bullets: ['li1', 'li2', 'li3'] },
+    p3: { bullets: ['li1', 'li2', 'li3'] },
+    p4: { bullets: ['li1', 'li2'] },
   };
 
   var VARIANT_CONFIG = {
     master:  { projects: ['p1', 'p3', 'p4'], skills: ['li1', 'li2'], skillsNote: true },
-    backend: { projects: ['p3', 'p4', 'p1'], skills: ['li1', 'li2'], skillsNote: true },
+    backend: { projects: ['p3', 'p4', 'p1'], skills: ['li1', 'li2', 'li3'], skillsNote: true },
     ai:      { projects: ['p1', 'p3', 'p4'], skills: ['li3', 'li2'] },
   };
 
