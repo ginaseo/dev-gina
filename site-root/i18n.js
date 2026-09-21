@@ -71,7 +71,7 @@ var I18N = {
 
     'projects.p4.title': 'Book Ecommerce | 도서 판매 플랫폼',
     'projects.p4.date': '2026.03 – 04',
-    'projects.p4.quote': '팀원 이탈로 개발 인력이 6명 → 3명으로 줄어든 상황에서 핵심 기능을 다시 추려 기한 내 완성한 도서 판매 서비스',
+    'projects.p4.quote': '팀원이 반으로 줄어든 상황에서 범위를 재조정해 기한 내 완성한 도서 판매 서비스 (팀 공동 1위)',
     'projects.p4.meta': 'Backend · PO · 3인 팀(404 Not Found) · MSA 5개 서비스',
     'projects.p4.li1': '프로젝트 운영 — 핵심 기능을 다시 추려 기한 내 완성, 공동 1위<ul><li>요구사항을 바탕으로 핵심 기능을 선별하고 범위를 조정</li><li>백엔드 개발과 함께 우선순위·일정 조율까지 담당(PO)</li></ul>',
     'projects.p4.li2': '회원·주문 모듈 구현<ul><li>사용자 인증·권한 관리 및 블랙리스트 정책 구현</li><li>주문 생명주기 설계 및 상태 전이 구현</li></ul>',
@@ -95,11 +95,11 @@ var I18N = {
     'education.e3': '<div class="edu-row"><h3>MBC아카데미</h3><span class="meta">2020.10 – 2021.03</span></div><div class="edu-desc">Java 기반 응용SW개발자 양성</div><ul><li>880시간 국가기간전략산업직종훈련</li></ul>',
     'education.e4': '<div class="edu-row"><h3>명지전문대학</h3><span class="meta">2009.03 – 2013.02</span></div><div class="edu-desc">정보통신과 (3년제) · BCIT 연계 복수 디플로마: Diploma of Technology, Computer Systems Technology</div>',
     'certs.c1': '<div class="edu-row"><h3>교원자격증 실기교사(전자계산)</h3><span class="meta">2013.03</span></div><div class="edu-desc">명지전문대학</div>',
-    'certs.c2': '<div class="edu-row"><h3>정보처리기사 — 필기 합격</h3><span class="meta">2026.09</span></div><div class="edu-desc">한국산업인력공단 · 실기 준비 중</div>',
+    'certs.c2': '<div class="edu-row"><h3>정보처리기사(필기)</h3><span class="meta">2026.09</span></div><div class="edu-desc">한국산업인력공단 · 실기 준비 중</div>',
     'etc.c1.title': 'CAD Designer',
     'etc.c1.meta': '2015 – 2020',
-    'etc.c1.li1': '토목·기계 CAD 도면 설계 및 설계 데이터 시각화 (유신 · SNK특허법률사무소)',
-    'etc.c1.li2': '반복되는 도면 작업을 자동화하다가, 소프트웨어로 업무를 개선하는 데 흥미를 느껴 개발자로 전향',
+    'etc.c1.li1': '토목·기계 CAD 도면 설계, 설계 데이터 시각화 (유신 · SNK특허법률사무소)',
+    'etc.c1.li2': '반복 도면 작업 자동화를 계기로 소프트웨어 개발 직군 전향',
   },
   en: {
     'header.avatar': 'G',
@@ -174,7 +174,7 @@ var I18N = {
 
     'projects.p4.title': 'Book Ecommerce | Book Sales Platform',
     'projects.p4.date': 'Mar–Apr 2026',
-    'projects.p4.quote': 'An e-commerce platform shipped on time by redefining the MVP after the team shrank from 6 to 3',
+    'projects.p4.quote': 'A book sales platform delivered on time by rescoping after the team shrank by half (co-1st place)',
     'projects.p4.meta': 'Backend · PO · Team 404 Not Found (3) · MSA, 5 services',
     'projects.p4.li1': 'Project operations — shipped on time with a redefined MVP, co-1st place<ul><li>Narrowed scope to membership, orders, and payments, and coordinated priorities and schedule as the backend developer acting as PO</li></ul>',
     'projects.p4.li2': 'Built membership auth and ordering features<ul><li>Owned the membership module and built the JWT auth server</li><li>Built cart and order-creation APIs</li></ul>',
@@ -198,10 +198,10 @@ var I18N = {
     'education.e3': '<div class="edu-row"><h3>MBC Academy</h3><span class="meta">Oct 2020 – Mar 2021</span></div><div class="edu-desc">Java-based application SW developer training</div><ul><li>880-hour national strategic industry training program</li></ul>',
     'education.e4': '<div class="edu-row"><h3>Myongji College</h3><span class="meta">Mar 2009 – Feb 2013</span></div><div class="edu-desc">Information & Communications, 3-year program · Dual diploma with BCIT: Diploma of Technology, Computer Systems Technology</div>',
     'certs.c1': '<div class="edu-row"><h3>Teaching Certificate / Vocational (Computer Science)</h3><span class="meta">2013.03</span></div><div class="edu-desc">Myongji College</div>',
-    'certs.c2': '<div class="edu-row"><h3>Engineer Information Processing — Written Exam Passed</h3><span class="meta">Sep 2026</span></div><div class="edu-desc">Human Resources Development Service of Korea · Preparing for the practical exam</div>',
+    'certs.c2': '<div class="edu-row"><h3>Engineer Information Processing (Written)</h3><span class="meta">Sep 2026</span></div><div class="edu-desc">Human Resources Development Service of Korea · Preparing for the practical exam</div>',
     'etc.c1.title': 'CAD Designer',
     'etc.c1.meta': '2015 – 2020',
-    'etc.c1.li1': 'Civil and mechanical CAD drafting and design-data visualization (Yushin · SNK Patent Law Firm)',
-    'etc.c1.li2': 'Automated repetitive drafting work, which sparked an interest in improving work through software and led to a shift into development',
+    'etc.c1.li1': 'Civil and mechanical CAD drafting, design-data visualization (Yushin · SNK Patent Law Firm)',
+    'etc.c1.li2': 'Automating repetitive drafting work led to a shift into software development',
   }
 };
