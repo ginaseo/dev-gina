@@ -70,7 +70,7 @@ var I18N = {
     'projects.p3.tech': '<b>Tech</b> Java 21 · Spring Boot · Apache Kafka · PostgreSQL · Caffeine · k6',
     'projects.p3.link': '<b>Link</b> <a href="https://github.com/prgrms-be-adv-devcourse/beadv5_1_HeadbuttingDinosaur_BE/pulls?q=is%3Apr+author%3Aginaseo+is%3Aclosed">GitHub PR</a>',
 
-    'projects.p4.title': 'Book Ecommerce | 도서 판매 플랫폼',
+    'projects.p4.title': 'BookEcommerce | 도서 판매 플랫폼',
     'projects.p4.date': '2026.03 – 04',
     'projects.p4.quote': '팀원이 반으로 줄어든 상황에서 범위를 재조정해 기한 내 완성한 도서 판매 서비스 (팀 공동 1위)',
     'projects.p4.meta': 'Backend · PO · 3인 팀 · MSA 5개 서비스',
@@ -174,7 +174,7 @@ var I18N = {
     'projects.p3.tech': '<b>Tech</b> Java 21 · Spring Boot · Apache Kafka · PostgreSQL · Caffeine · k6',
     'projects.p3.link': '<b>Link</b> <a href="https://github.com/prgrms-be-adv-devcourse/beadv5_1_HeadbuttingDinosaur_BE/pulls?q=is%3Apr+author%3Aginaseo+is%3Aclosed">GitHub PR</a>',
 
-    'projects.p4.title': 'Book Ecommerce | Book Sales Platform',
+    'projects.p4.title': 'BookEcommerce | Book Sales Platform',
     'projects.p4.date': 'Mar–Apr 2026',
     'projects.p4.quote': 'A book sales platform delivered on time by rescoping after the team shrank by half (co-1st place)',
     'projects.p4.meta': 'Backend · PO · Team of 3 · MSA, 5 services',
