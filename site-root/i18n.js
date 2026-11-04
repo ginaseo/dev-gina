@@ -40,7 +40,7 @@ var I18N = {
     'header.taglineBackendLink': '백엔드 개발자',
     'header.taglineAiLink': 'AI를 활용한 업무 자동화',
     'stack.li1': '<b>Java 21 / Spring Boot</b> 도메인 모델링부터 JPA·MyBatis 기반 API, Kafka 이벤트·동시성 제어까지 실무 구현',
-    'stack.li2': '<b>PostgreSQL / MariaDB</b> 스키마 설계, 인덱스·쿼리 튜닝으로 응답 시간 개선 경험',
+    'stack.li2': '<b>PostgreSQL / MariaDB</b> ERD·테이블 정의서 등 DB 설계 산출물 작성 (공공 SI · BookEcommerce)',
     'stack.li3': '<b>Docker / k3s / GitHub Actions</b> 컨테이너 배포 및 CI/CD 파이프라인 구성 가능',
     'stack.li4': '<b>LLM API / MCP</b> 자동화 파이프라인 설계, MCP 서버 직접 구현 가능',
 
@@ -143,7 +143,7 @@ var I18N = {
     'header.taglineBackendLink': 'Backend Developer',
     'header.taglineAiLink': 'AI-Driven Work Automation',
     'stack.li1': '<b>Java 21 / Spring Boot</b> From domain modeling to JPA/MyBatis-based APIs, Kafka event processing and concurrency control — hands-on implementation',
-    'stack.li2': '<b>PostgreSQL / MariaDB</b> Schema design and index/query tuning to cut response time',
+    'stack.li2': '<b>PostgreSQL / MariaDB</b> Authored DB design deliverables such as ERDs and table definitions (public-sector SI, BookEcommerce)',
     'stack.li3': '<b>Docker / k3s / GitHub Actions</b> Can set up containerized deployment and CI/CD pipelines',
     'stack.li4': '<b>LLM API / MCP</b> Can design automation pipelines and implement an MCP server myself',
 
