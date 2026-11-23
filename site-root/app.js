@@ -42,7 +42,7 @@
   // Every id used in VARIANT_CONFIG[*].projects below must have a matching entry here (renderResume throws otherwise).
   var PROJECT_META = {
     p1: { bullets: ['li1', 'li2'] },
-    p3: { bullets: ['li1', 'li2', 'li3'] },
+    p3: { bullets: ['li1', 'li2', 'li3', 'li4'] },
     p4: { bullets: ['li1', 'li2'] },
   };
 
